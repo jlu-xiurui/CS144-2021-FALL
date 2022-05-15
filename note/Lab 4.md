@@ -6,7 +6,7 @@
 
 链接器将 `TCPSender` 传输器和 `TCPReceiver` 接收器搭接起来，其基本构架如下：
 
-![lab4_figure1](C:\Users\xiurui\Desktop\计算机书单\CS144\lab4_figure1.png)
+![lab4_figure1](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/figure/lab4_figure1.png)
 
 链接器通过调用 `segment_received` 从网络中接受TCP段，并将其内容解析并分发至传输器和接收器。并且，链接器根据传输器和接收器的状态参数，主动或被动地构建TCP段并发送至网络。虽然总体构架看起来很简单，但其实际所需满足的细节有许多。在这里，从链接器关闭、接收TCP段、传输TCP段、时间流逝四个链接器行为进行讲解。
 
