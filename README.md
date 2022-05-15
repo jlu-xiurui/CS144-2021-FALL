@@ -3,7 +3,7 @@ CS144 2021 FALL的实验源码及笔记，实验的官网为[cs144](https://cs14
 
 ### 1. Lab0:networking warmup  [Lab0_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%200.md) 
 
-  本实验分为三部分：
+          本实验分为三部分：
 
   1. 利用 `telnet` 进行网络通信，体会网络通信的基本流程；
   2. 实现一个基于HTTP的GET函数，并将GET到的数据打印，以了解基本的socket编程；
