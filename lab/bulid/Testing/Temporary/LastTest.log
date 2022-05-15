@@ -1,0 +1,28 @@
+Start testing: May 15 13:22 CST
+----------------------------------------------------------
+31/169 Testing: t_webget
+31/169 Test: t_webget
+Command: "/home/xiurui/sponge/tests/webget_t.sh"
+Directory: /home/xiurui/sponge/bulid
+"t_webget" start time: May 15 13:22 CST
+Output:
+----------------------------------------------------------
+DEBUG: Connecting to 104.196.238.229:80... done.
+DEBUG: Inbound stream from 104.196.238.229:80 finished cleanly.
+DEBUG: Waiting for clean shutdown... HTTP/1.1 200 OK
+Content-type: text/plain
+
+7SmXqWkrLKzVBCEalbSPqBcvs11Pw263K7x4Wv3JckI
+DEBUG: Outbound stream to 104.196.238.229:80 finished (1 byte still in flight).
+DEBUG: Outbound stream to 104.196.238.229:80 has been fully acknowledged.
+DEBUG: TCP connection finished cleanly.
+done.
+<end of output>
+Test time =   1.29 sec
+----------------------------------------------------------
+Test Passed.
+"t_webget" end time: May 15 13:22 CST
+"t_webget" time elapsed: 00:00:01
+----------------------------------------------------------
+
+End testing: May 15 13:22 CST
