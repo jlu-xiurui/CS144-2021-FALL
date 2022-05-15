@@ -8,7 +8,7 @@
 
 为了节省TCP段用于存储序列号的空间，在这里使用 `WrappingInt32` 这一32位的结构压缩原有的64位绝对序列号。为了完成这一功能，我们需要在构建TCP段时将64位序列号压缩，并在解析TCP段时将 `WrappingInt32`  解压。在这里，有三种索引需要进行区分：
 
-![lab2_figure1](C:\Users\xiurui\Desktop\计算机书单\CS144\lab2_figure1.png)
+![lab2_figure1](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/figure/lab2_figure1.png)
 
 首先是存储在TCP段中的段序列号，其规格为32位，序列号的起始为一个随机的偏移量`ISN`（为了保证数据传输的安全性），且 `SYN` 和 `FIN` 均占据其一位；接着即为数据流的绝对序列号，其规格为64位，起始为0，且 `SYN` 和 `FIN` 均占据其一位；最后为 `ByteStream` 中的数据索引，其与绝对序列号的区别仅为 `SYN` 和 `FIN` 不占据其的位。
 
