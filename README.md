@@ -1,7 +1,7 @@
 # CS144-2021-FALL
 CS144 2021 FALL的实验源码及笔记，实验的官网为[cs144](https://cs144.github.io/)，有关实验的实验指导书和实验代码均可从该网站下载。实验的笔记位于note目录，实验源码位于lab目录。
 
-### 1. [Lab0_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%200.md) 
+### 1. Lab0 networking warmup  [Lab0_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%200.md) 
 本实验分为三部分：
 
 1. 利用 `telnet` 进行网络通信，体会网络通信的基本流程；
