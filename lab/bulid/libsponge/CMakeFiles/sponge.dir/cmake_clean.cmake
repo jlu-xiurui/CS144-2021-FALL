@@ -1,7 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sponge.dir/byte_stream.cc.o"
+  "CMakeFiles/sponge.dir/network_interface.cc.o"
   "CMakeFiles/sponge.dir/stream_reassembler.cc.o"
   "CMakeFiles/sponge.dir/tcp_connection.cc.o"
+  "CMakeFiles/sponge.dir/tcp_helpers/arp_message.cc.o"
+  "CMakeFiles/sponge.dir/tcp_helpers/ethernet_frame.cc.o"
+  "CMakeFiles/sponge.dir/tcp_helpers/ethernet_header.cc.o"
   "CMakeFiles/sponge.dir/tcp_helpers/fd_adapter.cc.o"
   "CMakeFiles/sponge.dir/tcp_helpers/ipv4_datagram.cc.o"
   "CMakeFiles/sponge.dir/tcp_helpers/ipv4_header.cc.o"

@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/xiurui/sponge/tests/byte_stream_test_harness.cc" "/home/xiurui/sponge/bulid/tests/CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.o"
+  "/home/xiurui/sponge/tests/network_interface_test_harness.cc" "/home/xiurui/sponge/bulid/tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o"
   "/home/xiurui/sponge/tests/send_equivalence_checker.cc" "/home/xiurui/sponge/bulid/tests/CMakeFiles/spongechecks.dir/send_equivalence_checker.cc.o"
   "/home/xiurui/sponge/tests/tcp_fsm_test_harness.cc" "/home/xiurui/sponge/bulid/tests/CMakeFiles/spongechecks.dir/tcp_fsm_test_harness.cc.o"
   )

@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/xiurui/sponge/bulid
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -88,6 +77,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -150,6 +150,21 @@ webget: apps/CMakeFiles/webget.dir/rule
 webget/fast:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/webget.dir/build.make apps/CMakeFiles/webget.dir/build
 .PHONY : webget/fast
+
+# Convenience name for target.
+apps/CMakeFiles/tcp_ip_ethernet.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_ip_ethernet.dir/rule
+.PHONY : apps/CMakeFiles/tcp_ip_ethernet.dir/rule
+
+# Convenience name for target.
+tcp_ip_ethernet: apps/CMakeFiles/tcp_ip_ethernet.dir/rule
+
+.PHONY : tcp_ip_ethernet
+
+# fast build rule for target.
+tcp_ip_ethernet/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_ip_ethernet.dir/build.make apps/CMakeFiles/tcp_ip_ethernet.dir/build
+.PHONY : tcp_ip_ethernet/fast
 
 # Convenience name for target.
 apps/CMakeFiles/tcp_udp.dir/rule:
@@ -294,6 +309,33 @@ tcp_benchmark.s: tcp_benchmark.cc.s
 tcp_benchmark.cc.s:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_benchmark.dir/build.make apps/CMakeFiles/tcp_benchmark.dir/tcp_benchmark.cc.s
 .PHONY : tcp_benchmark.cc.s
+
+tcp_ip_ethernet.o: tcp_ip_ethernet.cc.o
+
+.PHONY : tcp_ip_ethernet.o
+
+# target to build an object file
+tcp_ip_ethernet.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_ip_ethernet.dir/build.make apps/CMakeFiles/tcp_ip_ethernet.dir/tcp_ip_ethernet.cc.o
+.PHONY : tcp_ip_ethernet.cc.o
+
+tcp_ip_ethernet.i: tcp_ip_ethernet.cc.i
+
+.PHONY : tcp_ip_ethernet.i
+
+# target to preprocess a source file
+tcp_ip_ethernet.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_ip_ethernet.dir/build.make apps/CMakeFiles/tcp_ip_ethernet.dir/tcp_ip_ethernet.cc.i
+.PHONY : tcp_ip_ethernet.cc.i
+
+tcp_ip_ethernet.s: tcp_ip_ethernet.cc.s
+
+.PHONY : tcp_ip_ethernet.s
+
+# target to generate assembly for a file
+tcp_ip_ethernet.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_ip_ethernet.dir/build.make apps/CMakeFiles/tcp_ip_ethernet.dir/tcp_ip_ethernet.cc.s
+.PHONY : tcp_ip_ethernet.cc.s
 
 tcp_ipv4.o: tcp_ipv4.cc.o
 
@@ -463,11 +505,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... tcp_benchmark"
 	@echo "... webget"
+	@echo "... rebuild_cache"
+	@echo "... tcp_ip_ethernet"
 	@echo "... tcp_udp"
 	@echo "... tcp_ipv4"
 	@echo "... tcp_native"
@@ -480,6 +523,9 @@ help:
 	@echo "... tcp_benchmark.o"
 	@echo "... tcp_benchmark.i"
 	@echo "... tcp_benchmark.s"
+	@echo "... tcp_ip_ethernet.o"
+	@echo "... tcp_ip_ethernet.i"
+	@echo "... tcp_ip_ethernet.s"
 	@echo "... tcp_ipv4.o"
 	@echo "... tcp_ipv4.i"
 	@echo "... tcp_ipv4.s"

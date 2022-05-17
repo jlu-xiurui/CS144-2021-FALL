@@ -304,6 +304,19 @@ webget/fast:
 .PHONY : webget/fast
 
 #=============================================================================
+# Target rules for targets named tcp_ip_ethernet
+
+# Build rule for target.
+tcp_ip_ethernet: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tcp_ip_ethernet
+.PHONY : tcp_ip_ethernet
+
+# fast build rule for target.
+tcp_ip_ethernet/fast:
+	$(MAKE) -f apps/CMakeFiles/tcp_ip_ethernet.dir/build.make apps/CMakeFiles/tcp_ip_ethernet.dir/build
+.PHONY : tcp_ip_ethernet/fast
+
+#=============================================================================
 # Target rules for targets named tcp_udp
 
 # Build rule for target.
@@ -380,6 +393,19 @@ stream_copy: cmake_check_build_system
 stream_copy/fast:
 	$(MAKE) -f apps/CMakeFiles/stream_copy.dir/build.make apps/CMakeFiles/stream_copy.dir/build
 .PHONY : stream_copy/fast
+
+#=============================================================================
+# Target rules for targets named net_interface
+
+# Build rule for target.
+net_interface: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 net_interface
+.PHONY : net_interface
+
+# fast build rule for target.
+net_interface/fast:
+	$(MAKE) -f tests/CMakeFiles/net_interface.dir/build.make tests/CMakeFiles/net_interface.dir/build
+.PHONY : net_interface/fast
 
 #=============================================================================
 # Target rules for targets named send_close
@@ -1028,12 +1054,14 @@ help:
 	@echo "... sponge"
 	@echo "... tcp_benchmark"
 	@echo "... webget"
+	@echo "... tcp_ip_ethernet"
 	@echo "... tcp_udp"
 	@echo "... tcp_ipv4"
 	@echo "... tcp_native"
 	@echo "... tun"
 	@echo "... udp_tcpdump"
 	@echo "... stream_copy"
+	@echo "... net_interface"
 	@echo "... send_close"
 	@echo "... send_ack"
 	@echo "... send_window"

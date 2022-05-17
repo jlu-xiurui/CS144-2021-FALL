@@ -6,6 +6,11 @@
 },
 {
   "directory": "/home/xiurui/sponge/bulid/libsponge",
+  "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/sponge.dir/network_interface.cc.o -c /home/xiurui/sponge/libsponge/network_interface.cc",
+  "file": "/home/xiurui/sponge/libsponge/network_interface.cc"
+},
+{
+  "directory": "/home/xiurui/sponge/bulid/libsponge",
   "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/sponge.dir/stream_reassembler.cc.o -c /home/xiurui/sponge/libsponge/stream_reassembler.cc",
   "file": "/home/xiurui/sponge/libsponge/stream_reassembler.cc"
 },
@@ -13,6 +18,21 @@
   "directory": "/home/xiurui/sponge/bulid/libsponge",
   "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/sponge.dir/tcp_connection.cc.o -c /home/xiurui/sponge/libsponge/tcp_connection.cc",
   "file": "/home/xiurui/sponge/libsponge/tcp_connection.cc"
+},
+{
+  "directory": "/home/xiurui/sponge/bulid/libsponge",
+  "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/sponge.dir/tcp_helpers/arp_message.cc.o -c /home/xiurui/sponge/libsponge/tcp_helpers/arp_message.cc",
+  "file": "/home/xiurui/sponge/libsponge/tcp_helpers/arp_message.cc"
+},
+{
+  "directory": "/home/xiurui/sponge/bulid/libsponge",
+  "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/sponge.dir/tcp_helpers/ethernet_frame.cc.o -c /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_frame.cc",
+  "file": "/home/xiurui/sponge/libsponge/tcp_helpers/ethernet_frame.cc"
+},
+{
+  "directory": "/home/xiurui/sponge/bulid/libsponge",
+  "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/sponge.dir/tcp_helpers/ethernet_header.cc.o -c /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_header.cc",
+  "file": "/home/xiurui/sponge/libsponge/tcp_helpers/ethernet_header.cc"
 },
 {
   "directory": "/home/xiurui/sponge/bulid/libsponge",
@@ -126,6 +146,11 @@
 },
 {
   "directory": "/home/xiurui/sponge/bulid/apps",
+  "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/tcp_ip_ethernet.dir/tcp_ip_ethernet.cc.o -c /home/xiurui/sponge/apps/tcp_ip_ethernet.cc",
+  "file": "/home/xiurui/sponge/apps/tcp_ip_ethernet.cc"
+},
+{
+  "directory": "/home/xiurui/sponge/bulid/apps",
   "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/tcp_udp.dir/tcp_udp.cc.o -c /home/xiurui/sponge/apps/tcp_udp.cc",
   "file": "/home/xiurui/sponge/apps/tcp_udp.cc"
 },
@@ -153,6 +178,11 @@
   "directory": "/home/xiurui/sponge/bulid/apps",
   "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/stream_copy.dir/bidirectional_stream_copy.cc.o -c /home/xiurui/sponge/apps/bidirectional_stream_copy.cc",
   "file": "/home/xiurui/sponge/apps/bidirectional_stream_copy.cc"
+},
+{
+  "directory": "/home/xiurui/sponge/bulid/tests",
+  "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/net_interface.dir/net_interface.cc.o -c /home/xiurui/sponge/tests/net_interface.cc",
+  "file": "/home/xiurui/sponge/tests/net_interface.cc"
 },
 {
   "directory": "/home/xiurui/sponge/bulid/tests",
@@ -308,6 +338,11 @@
   "directory": "/home/xiurui/sponge/bulid/tests",
   "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.o -c /home/xiurui/sponge/tests/byte_stream_test_harness.cc",
   "file": "/home/xiurui/sponge/tests/byte_stream_test_harness.cc"
+},
+{
+  "directory": "/home/xiurui/sponge/bulid/tests",
+  "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o -c /home/xiurui/sponge/tests/network_interface_test_harness.cc",
+  "file": "/home/xiurui/sponge/tests/network_interface_test_harness.cc"
 },
 {
   "directory": "/home/xiurui/sponge/bulid/tests",

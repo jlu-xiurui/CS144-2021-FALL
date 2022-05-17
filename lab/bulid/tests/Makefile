@@ -122,6 +122,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+tests/CMakeFiles/net_interface.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/net_interface.dir/rule
+.PHONY : tests/CMakeFiles/net_interface.dir/rule
+
+# Convenience name for target.
+net_interface: tests/CMakeFiles/net_interface.dir/rule
+
+.PHONY : net_interface
+
+# fast build rule for target.
+net_interface/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f tests/CMakeFiles/net_interface.dir/build.make tests/CMakeFiles/net_interface.dir/build
+.PHONY : net_interface/fast
+
+# Convenience name for target.
 tests/CMakeFiles/send_close.dir/rule:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/send_close.dir/rule
 .PHONY : tests/CMakeFiles/send_close.dir/rule
@@ -1525,6 +1540,60 @@ ipv4_parser.cc.s:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f tests/CMakeFiles/ipv4_parser.dir/build.make tests/CMakeFiles/ipv4_parser.dir/ipv4_parser.cc.s
 .PHONY : ipv4_parser.cc.s
 
+net_interface.o: net_interface.cc.o
+
+.PHONY : net_interface.o
+
+# target to build an object file
+net_interface.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f tests/CMakeFiles/net_interface.dir/build.make tests/CMakeFiles/net_interface.dir/net_interface.cc.o
+.PHONY : net_interface.cc.o
+
+net_interface.i: net_interface.cc.i
+
+.PHONY : net_interface.i
+
+# target to preprocess a source file
+net_interface.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f tests/CMakeFiles/net_interface.dir/build.make tests/CMakeFiles/net_interface.dir/net_interface.cc.i
+.PHONY : net_interface.cc.i
+
+net_interface.s: net_interface.cc.s
+
+.PHONY : net_interface.s
+
+# target to generate assembly for a file
+net_interface.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f tests/CMakeFiles/net_interface.dir/build.make tests/CMakeFiles/net_interface.dir/net_interface.cc.s
+.PHONY : net_interface.cc.s
+
+network_interface_test_harness.o: network_interface_test_harness.cc.o
+
+.PHONY : network_interface_test_harness.o
+
+# target to build an object file
+network_interface_test_harness.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f tests/CMakeFiles/spongechecks.dir/build.make tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o
+.PHONY : network_interface_test_harness.cc.o
+
+network_interface_test_harness.i: network_interface_test_harness.cc.i
+
+.PHONY : network_interface_test_harness.i
+
+# target to preprocess a source file
+network_interface_test_harness.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f tests/CMakeFiles/spongechecks.dir/build.make tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.i
+.PHONY : network_interface_test_harness.cc.i
+
+network_interface_test_harness.s: network_interface_test_harness.cc.s
+
+.PHONY : network_interface_test_harness.s
+
+# target to generate assembly for a file
+network_interface_test_harness.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f tests/CMakeFiles/spongechecks.dir/build.make tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.s
+.PHONY : network_interface_test_harness.cc.s
+
 recv_close.o: recv_close.cc.o
 
 .PHONY : recv_close.o
@@ -2071,6 +2140,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... net_interface"
 	@echo "... test"
 	@echo "... send_close"
 	@echo "... send_ack"
@@ -2200,6 +2270,12 @@ help:
 	@echo "... ipv4_parser.o"
 	@echo "... ipv4_parser.i"
 	@echo "... ipv4_parser.s"
+	@echo "... net_interface.o"
+	@echo "... net_interface.i"
+	@echo "... net_interface.s"
+	@echo "... network_interface_test_harness.o"
+	@echo "... network_interface_test_harness.i"
+	@echo "... network_interface_test_harness.s"
 	@echo "... recv_close.o"
 	@echo "... recv_close.i"
 	@echo "... recv_close.s"

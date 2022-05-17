@@ -3,8 +3,11 @@
 
 apps/CMakeFiles/tcp_ipv4.dir/tcp_ipv4.cc.o
  ../libsponge/byte_stream.hh
+ ../libsponge/network_interface.hh
  ../libsponge/stream_reassembler.hh
  ../libsponge/tcp_connection.hh
+ ../libsponge/tcp_helpers/ethernet_frame.hh
+ ../libsponge/tcp_helpers/ethernet_header.hh
  ../libsponge/tcp_helpers/fd_adapter.hh
  ../libsponge/tcp_helpers/ipv4_datagram.hh
  ../libsponge/tcp_helpers/ipv4_header.hh

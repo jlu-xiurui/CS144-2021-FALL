@@ -163,6 +163,33 @@ byte_stream.cc.s:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/byte_stream.cc.s
 .PHONY : byte_stream.cc.s
 
+network_interface.o: network_interface.cc.o
+
+.PHONY : network_interface.o
+
+# target to build an object file
+network_interface.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/network_interface.cc.o
+.PHONY : network_interface.cc.o
+
+network_interface.i: network_interface.cc.i
+
+.PHONY : network_interface.i
+
+# target to preprocess a source file
+network_interface.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/network_interface.cc.i
+.PHONY : network_interface.cc.i
+
+network_interface.s: network_interface.cc.s
+
+.PHONY : network_interface.s
+
+# target to generate assembly for a file
+network_interface.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/network_interface.cc.s
+.PHONY : network_interface.cc.s
+
 stream_reassembler.o: stream_reassembler.cc.o
 
 .PHONY : stream_reassembler.o
@@ -216,6 +243,87 @@ tcp_connection.s: tcp_connection.cc.s
 tcp_connection.cc.s:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_connection.cc.s
 .PHONY : tcp_connection.cc.s
+
+tcp_helpers/arp_message.o: tcp_helpers/arp_message.cc.o
+
+.PHONY : tcp_helpers/arp_message.o
+
+# target to build an object file
+tcp_helpers/arp_message.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_helpers/arp_message.cc.o
+.PHONY : tcp_helpers/arp_message.cc.o
+
+tcp_helpers/arp_message.i: tcp_helpers/arp_message.cc.i
+
+.PHONY : tcp_helpers/arp_message.i
+
+# target to preprocess a source file
+tcp_helpers/arp_message.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_helpers/arp_message.cc.i
+.PHONY : tcp_helpers/arp_message.cc.i
+
+tcp_helpers/arp_message.s: tcp_helpers/arp_message.cc.s
+
+.PHONY : tcp_helpers/arp_message.s
+
+# target to generate assembly for a file
+tcp_helpers/arp_message.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_helpers/arp_message.cc.s
+.PHONY : tcp_helpers/arp_message.cc.s
+
+tcp_helpers/ethernet_frame.o: tcp_helpers/ethernet_frame.cc.o
+
+.PHONY : tcp_helpers/ethernet_frame.o
+
+# target to build an object file
+tcp_helpers/ethernet_frame.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_helpers/ethernet_frame.cc.o
+.PHONY : tcp_helpers/ethernet_frame.cc.o
+
+tcp_helpers/ethernet_frame.i: tcp_helpers/ethernet_frame.cc.i
+
+.PHONY : tcp_helpers/ethernet_frame.i
+
+# target to preprocess a source file
+tcp_helpers/ethernet_frame.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_helpers/ethernet_frame.cc.i
+.PHONY : tcp_helpers/ethernet_frame.cc.i
+
+tcp_helpers/ethernet_frame.s: tcp_helpers/ethernet_frame.cc.s
+
+.PHONY : tcp_helpers/ethernet_frame.s
+
+# target to generate assembly for a file
+tcp_helpers/ethernet_frame.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_helpers/ethernet_frame.cc.s
+.PHONY : tcp_helpers/ethernet_frame.cc.s
+
+tcp_helpers/ethernet_header.o: tcp_helpers/ethernet_header.cc.o
+
+.PHONY : tcp_helpers/ethernet_header.o
+
+# target to build an object file
+tcp_helpers/ethernet_header.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_helpers/ethernet_header.cc.o
+.PHONY : tcp_helpers/ethernet_header.cc.o
+
+tcp_helpers/ethernet_header.i: tcp_helpers/ethernet_header.cc.i
+
+.PHONY : tcp_helpers/ethernet_header.i
+
+# target to preprocess a source file
+tcp_helpers/ethernet_header.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_helpers/ethernet_header.cc.i
+.PHONY : tcp_helpers/ethernet_header.cc.i
+
+tcp_helpers/ethernet_header.s: tcp_helpers/ethernet_header.cc.s
+
+.PHONY : tcp_helpers/ethernet_header.s
+
+# target to generate assembly for a file
+tcp_helpers/ethernet_header.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/tcp_helpers/ethernet_header.cc.s
+.PHONY : tcp_helpers/ethernet_header.cc.s
 
 tcp_helpers/fd_adapter.o: tcp_helpers/fd_adapter.cc.o
 
@@ -770,12 +878,24 @@ help:
 	@echo "... byte_stream.o"
 	@echo "... byte_stream.i"
 	@echo "... byte_stream.s"
+	@echo "... network_interface.o"
+	@echo "... network_interface.i"
+	@echo "... network_interface.s"
 	@echo "... stream_reassembler.o"
 	@echo "... stream_reassembler.i"
 	@echo "... stream_reassembler.s"
 	@echo "... tcp_connection.o"
 	@echo "... tcp_connection.i"
 	@echo "... tcp_connection.s"
+	@echo "... tcp_helpers/arp_message.o"
+	@echo "... tcp_helpers/arp_message.i"
+	@echo "... tcp_helpers/arp_message.s"
+	@echo "... tcp_helpers/ethernet_frame.o"
+	@echo "... tcp_helpers/ethernet_frame.i"
+	@echo "... tcp_helpers/ethernet_frame.s"
+	@echo "... tcp_helpers/ethernet_header.o"
+	@echo "... tcp_helpers/ethernet_header.i"
+	@echo "... tcp_helpers/ethernet_header.s"
 	@echo "... tcp_helpers/fd_adapter.o"
 	@echo "... tcp_helpers/fd_adapter.i"
 	@echo "... tcp_helpers/fd_adapter.s"

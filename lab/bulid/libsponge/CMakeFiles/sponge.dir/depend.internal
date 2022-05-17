@@ -4,6 +4,28 @@
 libsponge/CMakeFiles/sponge.dir/byte_stream.cc.o
  /home/xiurui/sponge/libsponge/byte_stream.cc
  /home/xiurui/sponge/libsponge/byte_stream.hh
+libsponge/CMakeFiles/sponge.dir/network_interface.cc.o
+ ../libsponge/tcp_helpers/arp_message.hh
+ ../libsponge/tcp_helpers/ethernet_frame.hh
+ ../libsponge/tcp_helpers/ethernet_header.hh
+ ../libsponge/tcp_helpers/fd_adapter.hh
+ ../libsponge/tcp_helpers/ipv4_datagram.hh
+ ../libsponge/tcp_helpers/ipv4_header.hh
+ ../libsponge/tcp_helpers/lossy_fd_adapter.hh
+ ../libsponge/tcp_helpers/tcp_config.hh
+ ../libsponge/tcp_helpers/tcp_header.hh
+ ../libsponge/tcp_helpers/tcp_over_ip.hh
+ ../libsponge/tcp_helpers/tcp_segment.hh
+ ../libsponge/util/address.hh
+ ../libsponge/util/buffer.hh
+ ../libsponge/util/file_descriptor.hh
+ ../libsponge/util/parser.hh
+ ../libsponge/util/socket.hh
+ ../libsponge/util/tun.hh
+ ../libsponge/util/util.hh
+ ../libsponge/wrapping_integers.hh
+ /home/xiurui/sponge/libsponge/network_interface.cc
+ /home/xiurui/sponge/libsponge/network_interface.hh
 libsponge/CMakeFiles/sponge.dir/stream_reassembler.cc.o
  /home/xiurui/sponge/libsponge/byte_stream.hh
  /home/xiurui/sponge/libsponge/stream_reassembler.cc
@@ -23,6 +45,26 @@ libsponge/CMakeFiles/sponge.dir/tcp_connection.cc.o
  /home/xiurui/sponge/libsponge/tcp_connection.hh
  /home/xiurui/sponge/libsponge/tcp_receiver.hh
  /home/xiurui/sponge/libsponge/tcp_sender.hh
+libsponge/CMakeFiles/sponge.dir/tcp_helpers/arp_message.cc.o
+ ../libsponge/util/buffer.hh
+ ../libsponge/util/parser.hh
+ /home/xiurui/sponge/libsponge/tcp_helpers/arp_message.cc
+ /home/xiurui/sponge/libsponge/tcp_helpers/arp_message.hh
+ /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_header.hh
+ /home/xiurui/sponge/libsponge/tcp_helpers/ipv4_header.hh
+libsponge/CMakeFiles/sponge.dir/tcp_helpers/ethernet_frame.cc.o
+ ../libsponge/util/buffer.hh
+ ../libsponge/util/parser.hh
+ ../libsponge/util/util.hh
+ /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_frame.cc
+ /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_frame.hh
+ /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_header.hh
+libsponge/CMakeFiles/sponge.dir/tcp_helpers/ethernet_header.cc.o
+ ../libsponge/util/buffer.hh
+ ../libsponge/util/parser.hh
+ ../libsponge/util/util.hh
+ /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_header.cc
+ /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_header.hh
 libsponge/CMakeFiles/sponge.dir/tcp_helpers/fd_adapter.cc.o
  ../libsponge/util/address.hh
  ../libsponge/util/buffer.hh
@@ -83,8 +125,13 @@ libsponge/CMakeFiles/sponge.dir/tcp_helpers/tcp_segment.cc.o
  /home/xiurui/sponge/libsponge/tcp_helpers/tcp_segment.hh
 libsponge/CMakeFiles/sponge.dir/tcp_helpers/tcp_sponge_socket.cc.o
  ../libsponge/byte_stream.hh
+ ../libsponge/network_interface.hh
  ../libsponge/stream_reassembler.hh
  ../libsponge/tcp_connection.hh
+ ../libsponge/tcp_helpers/ethernet_frame.hh
+ ../libsponge/tcp_helpers/ipv4_datagram.hh
+ ../libsponge/tcp_helpers/ipv4_header.hh
+ ../libsponge/tcp_helpers/tcp_over_ip.hh
  ../libsponge/tcp_helpers/tcp_state.hh
  ../libsponge/tcp_receiver.hh
  ../libsponge/tcp_sender.hh
@@ -97,13 +144,11 @@ libsponge/CMakeFiles/sponge.dir/tcp_helpers/tcp_sponge_socket.cc.o
  ../libsponge/util/tun.hh
  ../libsponge/util/util.hh
  ../libsponge/wrapping_integers.hh
+ /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_header.hh
  /home/xiurui/sponge/libsponge/tcp_helpers/fd_adapter.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/ipv4_datagram.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/ipv4_header.hh
  /home/xiurui/sponge/libsponge/tcp_helpers/lossy_fd_adapter.hh
  /home/xiurui/sponge/libsponge/tcp_helpers/tcp_config.hh
  /home/xiurui/sponge/libsponge/tcp_helpers/tcp_header.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/tcp_over_ip.hh
  /home/xiurui/sponge/libsponge/tcp_helpers/tcp_segment.hh
  /home/xiurui/sponge/libsponge/tcp_helpers/tcp_sponge_socket.cc
  /home/xiurui/sponge/libsponge/tcp_helpers/tcp_sponge_socket.hh
@@ -123,6 +168,16 @@ libsponge/CMakeFiles/sponge.dir/tcp_helpers/tcp_state.cc.o
  /home/xiurui/sponge/libsponge/tcp_helpers/tcp_state.cc
  /home/xiurui/sponge/libsponge/tcp_helpers/tcp_state.hh
 libsponge/CMakeFiles/sponge.dir/tcp_helpers/tuntap_adapter.cc.o
+ ../libsponge/network_interface.hh
+ ../libsponge/tcp_helpers/ethernet_frame.hh
+ ../libsponge/tcp_helpers/fd_adapter.hh
+ ../libsponge/tcp_helpers/ipv4_datagram.hh
+ ../libsponge/tcp_helpers/ipv4_header.hh
+ ../libsponge/tcp_helpers/lossy_fd_adapter.hh
+ ../libsponge/tcp_helpers/tcp_config.hh
+ ../libsponge/tcp_helpers/tcp_header.hh
+ ../libsponge/tcp_helpers/tcp_over_ip.hh
+ ../libsponge/tcp_helpers/tcp_segment.hh
  ../libsponge/util/address.hh
  ../libsponge/util/buffer.hh
  ../libsponge/util/file_descriptor.hh
@@ -131,14 +186,7 @@ libsponge/CMakeFiles/sponge.dir/tcp_helpers/tuntap_adapter.cc.o
  ../libsponge/util/tun.hh
  ../libsponge/util/util.hh
  ../libsponge/wrapping_integers.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/fd_adapter.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/ipv4_datagram.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/ipv4_header.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/lossy_fd_adapter.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/tcp_config.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/tcp_header.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/tcp_over_ip.hh
- /home/xiurui/sponge/libsponge/tcp_helpers/tcp_segment.hh
+ /home/xiurui/sponge/libsponge/tcp_helpers/ethernet_header.hh
  /home/xiurui/sponge/libsponge/tcp_helpers/tuntap_adapter.cc
  /home/xiurui/sponge/libsponge/tcp_helpers/tuntap_adapter.hh
 libsponge/CMakeFiles/sponge.dir/tcp_receiver.cc.o

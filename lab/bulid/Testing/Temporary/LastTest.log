@@ -1,13 +1,15 @@
-Start testing: May 15 13:22 CST
+Start testing: May 17 16:02 CST
 ----------------------------------------------------------
 31/169 Testing: t_webget
 31/169 Test: t_webget
 Command: "/home/xiurui/sponge/tests/webget_t.sh"
 Directory: /home/xiurui/sponge/bulid
-"t_webget" start time: May 15 13:22 CST
+"t_webget" start time: May 17 16:02 CST
 Output:
 ----------------------------------------------------------
-DEBUG: Connecting to 104.196.238.229:80... done.
+DEBUG: Network interface has Ethernet address d6:da:07:27:94:b2 and IP address 169.254.10.9
+DEBUG: Connecting to 104.196.238.229:80...
+Successfully connected to 104.196.238.229:80.
 DEBUG: Inbound stream from 104.196.238.229:80 finished cleanly.
 DEBUG: Waiting for clean shutdown... HTTP/1.1 200 OK
 Content-type: text/plain
@@ -18,11 +20,32 @@ DEBUG: Outbound stream to 104.196.238.229:80 has been fully acknowledged.
 DEBUG: TCP connection finished cleanly.
 done.
 <end of output>
-Test time =   1.29 sec
+Test time =   2.55 sec
 ----------------------------------------------------------
 Test Passed.
-"t_webget" end time: May 15 13:22 CST
-"t_webget" time elapsed: 00:00:01
+"t_webget" end time: May 17 16:02 CST
+"t_webget" time elapsed: 00:00:02
 ----------------------------------------------------------
 
-End testing: May 15 13:22 CST
+32/169 Testing: arp_network_interface
+32/169 Test: arp_network_interface
+Command: "/home/xiurui/sponge/bulid/tests/net_interface"
+Directory: /home/xiurui/sponge/bulid
+"arp_network_interface" start time: May 17 16:02 CST
+Output:
+----------------------------------------------------------
+DEBUG: Network interface has Ethernet address 5e:2e:a5:4c:ae:d7 and IP address 4.3.2.1
+DEBUG: Network interface has Ethernet address 62:d2:34:90:f8:c4 and IP address 5.5.5.5
+DEBUG: Network interface has Ethernet address 36:2e:53:03:ca:3e and IP address 5.5.5.5
+DEBUG: Network interface has Ethernet address 5e:0c:af:02:f4:84 and IP address 1.2.3.4
+DEBUG: Network interface has Ethernet address 8e:70:b6:2d:9e:47 and IP address 4.3.2.1
+DEBUG: Network interface has Ethernet address 9a:a0:29:c2:7b:0b and IP address 10.0.0.1
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"arp_network_interface" end time: May 17 16:02 CST
+"arp_network_interface" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 17 16:02 CST

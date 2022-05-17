@@ -96,11 +96,25 @@ tests/CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.s"
 	cd /home/xiurui/sponge/bulid/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiurui/sponge/tests/byte_stream_test_harness.cc -o CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.s
 
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: tests/CMakeFiles/spongechecks.dir/flags.make
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../tests/network_interface_test_harness.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiurui/sponge/bulid/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o"
+	cd /home/xiurui/sponge/bulid/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o -c /home/xiurui/sponge/tests/network_interface_test_harness.cc
+
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.i"
+	cd /home/xiurui/sponge/bulid/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xiurui/sponge/tests/network_interface_test_harness.cc > CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.i
+
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.s"
+	cd /home/xiurui/sponge/bulid/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xiurui/sponge/tests/network_interface_test_harness.cc -o CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.s
+
 # Object files for target spongechecks
 spongechecks_OBJECTS = \
 "CMakeFiles/spongechecks.dir/send_equivalence_checker.cc.o" \
 "CMakeFiles/spongechecks.dir/tcp_fsm_test_harness.cc.o" \
-"CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.o"
+"CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.o" \
+"CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o"
 
 # External object files for target spongechecks
 spongechecks_EXTERNAL_OBJECTS =
@@ -108,9 +122,10 @@ spongechecks_EXTERNAL_OBJECTS =
 tests/libspongechecks.a: tests/CMakeFiles/spongechecks.dir/send_equivalence_checker.cc.o
 tests/libspongechecks.a: tests/CMakeFiles/spongechecks.dir/tcp_fsm_test_harness.cc.o
 tests/libspongechecks.a: tests/CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.o
+tests/libspongechecks.a: tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o
 tests/libspongechecks.a: tests/CMakeFiles/spongechecks.dir/build.make
 tests/libspongechecks.a: tests/CMakeFiles/spongechecks.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiurui/sponge/bulid/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libspongechecks.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiurui/sponge/bulid/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libspongechecks.a"
 	cd /home/xiurui/sponge/bulid/tests && $(CMAKE_COMMAND) -P CMakeFiles/spongechecks.dir/cmake_clean_target.cmake
 	cd /home/xiurui/sponge/bulid/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/spongechecks.dir/link.txt --verbose=$(VERBOSE)
 

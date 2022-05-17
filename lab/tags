@@ -64,6 +64,7 @@ ARCHITECTURE_ID	bulid/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	516
 ARCHITECTURE_ID	bulid/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	519;"	d	file:
 ARCHITECTURE_ID	bulid/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	522;"	d	file:
 ARCHITECTURE_ID	bulid/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	525;"	d	file:
+ARPMessage	libsponge/tcp_helpers/arp_message.hh	/^struct ARPMessage {$/;"	s
 AckReceived	tests/sender_harness.hh	/^    AckReceived(WrappingInt32 ackno) : _ackno(ackno) {}$/;"	f	struct:AckReceived
 AckReceived	tests/sender_harness.hh	/^struct AckReceived : public SenderAction {$/;"	s
 Address	libsponge/util/address.cc	/^Address::Address(const sockaddr *addr, const size_t size) : _size(size) {$/;"	f	class:Address
@@ -399,6 +400,7 @@ DEFAULT_TEST_WINDOW	tests/sender_harness.hh	/^const unsigned int DEFAULT_TEST_WI
 DEFAULT_TEST_WINDOW	tests/tcp_fsm_test_harness.cc	/^const unsigned int DEFAULT_TEST_WINDOW = 137;$/;"	v
 DEFAULT_TTL	libsponge/tcp_helpers/ipv4_header.hh	/^    static constexpr uint8_t DEFAULT_TTL = 128;  \/\/!< A reasonable default TTL value$/;"	m	struct:IPv4Header
 DUMMY_CODE	libsponge/byte_stream.cc	/^void DUMMY_CODE(Targs &&... \/* unused *\/) {}$/;"	f
+DUMMY_CODE	libsponge/network_interface.cc	/^void DUMMY_CODE(Targs &&... \/* unused *\/) {}$/;"	f
 DUMMY_CODE	libsponge/stream_reassembler.cc	/^void DUMMY_CODE(Targs &&... \/* unused *\/) {}$/;"	f
 DUMMY_CODE	libsponge/tcp_connection.cc	/^void DUMMY_CODE(Targs &&... \/* unused *\/) {}$/;"	f
 DUMMY_CODE	libsponge/tcp_receiver.cc	/^void DUMMY_CODE(Targs &&... \/* unused *\/) {}$/;"	f
@@ -416,6 +418,8 @@ ESTABLISHED	libsponge/tcp_helpers/tcp_state.hh	/^        ESTABLISHED,  \/\/!< Th
 EndInput	tests/byte_stream_test_harness.hh	/^struct EndInput : public ByteStreamAction {$/;"	s
 Eof	tests/byte_stream_test_harness.cc	/^Eof::Eof(const bool eof) : _eof(eof) {}$/;"	f	class:Eof
 Eof	tests/byte_stream_test_harness.hh	/^struct Eof : public ByteStreamExpectation {$/;"	s
+EthernetFrame	libsponge/tcp_helpers/ethernet_frame.hh	/^class EthernetFrame {$/;"	c
+EthernetHeader	libsponge/tcp_helpers/ethernet_header.hh	/^struct EthernetHeader {$/;"	s
 EventLoop	libsponge/util/eventloop.hh	/^class EventLoop {$/;"	c
 ExpectAckno	tests/receiver_harness.hh	/^    ExpectAckno(std::optional<WrappingInt32> ackno) : _ackno(ackno) {}$/;"	f	struct:ExpectAckno
 ExpectAckno	tests/receiver_harness.hh	/^struct ExpectAckno : public ReceiverExpectation {$/;"	s
@@ -475,6 +479,9 @@ FdAdapterConfig	libsponge/tcp_helpers/tcp_config.hh	/^class FdAdapterConfig {$/;
 FileDescriptor	libsponge/util/file_descriptor.cc	/^FileDescriptor::FileDescriptor(const int fd) : _internal_fd(make_shared<FDWrapper>(fd)) {}$/;"	f	class:FileDescriptor
 FileDescriptor	libsponge/util/file_descriptor.cc	/^FileDescriptor::FileDescriptor(shared_ptr<FDWrapper> other_shared_ptr) : _internal_fd(move(other_shared_ptr)) {}$/;"	f	class:FileDescriptor
 FileDescriptor	libsponge/util/file_descriptor.hh	/^class FileDescriptor {$/;"	c
+FullStackSocket	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^FullStackSocket::FullStackSocket()$/;"	f	class:FullStackSocket
+FullStackSocket	libsponge/tcp_helpers/tcp_sponge_socket.hh	/^class FullStackSocket : public TCPOverIPv4OverEthernetSpongeSocket {$/;"	c
+GATEWAY_DFLT	apps/tcp_ip_ethernet.cc	/^const string GATEWAY_DFLT = "169.254.10.1";$/;"	v
 HEX	bulid/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	555;"	d	file:
 HEX	bulid/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	540;"	d	file:
 HeaderTooShort	libsponge/util/parser.hh	/^    HeaderTooShort,   \/\/!< Header length is shorter than minimum required$/;"	m	class:ParseResult
@@ -487,11 +494,16 @@ InputEnded	tests/byte_stream_test_harness.hh	/^struct InputEnded : public ByteSt
 InternetChecksum	libsponge/util/util.cc	/^InternetChecksum::InternetChecksum(const uint32_t initial_sum) : _sum(initial_sum) {}$/;"	f	class:InternetChecksum
 InternetChecksum	libsponge/util/util.hh	/^class InternetChecksum {$/;"	c
 LAST_ACK	libsponge/tcp_helpers/tcp_state.hh	/^        LAST_ACK,     \/\/!< Local side sent a FIN from CLOSE_WAIT, waiting for ACK$/;"	m	class:TCPState::State
+LENGTH	libsponge/tcp_helpers/arp_message.hh	/^    static constexpr size_t LENGTH = 28;          \/\/!< ARP message length in bytes$/;"	m	struct:ARPMessage
+LENGTH	libsponge/tcp_helpers/ethernet_header.hh	/^    static constexpr size_t LENGTH = 14;          \/\/!< Ethernet header length in bytes$/;"	m	struct:EthernetHeader
 LENGTH	libsponge/tcp_helpers/ipv4_header.hh	/^    static constexpr size_t LENGTH = 20;         \/\/!< [IPv4](\\ref rfc::rfc791) header length, not including options$/;"	m	struct:IPv4Header
 LENGTH	libsponge/tcp_helpers/tcp_header.hh	/^    static constexpr size_t LENGTH = 20;  \/\/!< [TCP](\\ref rfc::rfc793) header length, not including options$/;"	m	struct:TCPHeader
 LISTEN	libsponge/tcp_helpers/tcp_state.hh	/^        LISTEN = 0,   \/\/!< Listening for a peer to connect$/;"	m	class:TCPState::State
 LISTEN	libsponge/tcp_helpers/tcp_state.hh	/^const std::string LISTEN = "waiting for SYN: ackno is empty";$/;"	m	namespace:TCPReceiverStateSummary
+LOCAL_ADDRESS_DFLT	apps/tcp_ip_ethernet.cc	/^const string LOCAL_ADDRESS_DFLT = "169.254.10.9";$/;"	v
 LOCAL_ADDRESS_DFLT	apps/tcp_ipv4.cc	/^const string LOCAL_ADDRESS_DFLT = "169.254.144.9";$/;"	v
+LOCAL_TAP_IP_ADDRESS	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^static const string LOCAL_TAP_IP_ADDRESS = "169.254.10.9";$/;"	v	file:
+LOCAL_TAP_NEXT_HOP_ADDRESS	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^static const string LOCAL_TAP_NEXT_HOP_ADDRESS = "169.254.10.1";$/;"	v	file:
 Listen	tests/tcp_expectation.hh	/^struct Listen : public TCPAction {$/;"	s
 LocalStreamSocket	libsponge/util/socket.hh	/^    explicit LocalStreamSocket(FileDescriptor &&fd) : Socket(std::move(fd), AF_UNIX, SOCK_STREAM) {}$/;"	f	class:LocalStreamSocket
 LocalStreamSocket	libsponge/util/socket.hh	/^class LocalStreamSocket : public Socket {$/;"	c
@@ -520,6 +532,8 @@ NSEGS	tests/fsm_stream_reassembler_win.cc	/^static constexpr unsigned NSEGS = 12
 NetParser	libsponge/util/parser.hh	/^    NetParser(Buffer buffer) : _buffer(buffer) {}$/;"	f	class:NetParser
 NetParser	libsponge/util/parser.hh	/^class NetParser {$/;"	c
 NetUnparser	libsponge/util/parser.hh	/^struct NetUnparser {$/;"	s
+NetworkInterface	libsponge/network_interface.cc	/^NetworkInterface::NetworkInterface(const EthernetAddress &ethernet_address, const Address &ip_address)$/;"	f	class:NetworkInterface
+NetworkInterface	libsponge/network_interface.hh	/^class NetworkInterface {$/;"	c
 NetworkInterfaceAction	tests/network_interface_test_harness.hh	/^struct NetworkInterfaceAction : public NetworkInterfaceTestStep {$/;"	s
 NetworkInterfaceExpectation	tests/network_interface_test_harness.hh	/^struct NetworkInterfaceExpectation : public NetworkInterfaceTestStep {$/;"	s
 NetworkInterfaceExpectationViolation	tests/network_interface_test_harness.cc	/^NetworkInterfaceExpectationViolation::NetworkInterfaceExpectationViolation(const std::string &msg)$/;"	f	class:NetworkInterfaceExpectationViolation
@@ -530,6 +544,8 @@ NetworkInterfaceTestStep	tests/network_interface_test_harness.hh	/^struct Networ
 NoError	libsponge/util/parser.hh	/^    NoError = 0,      \/\/!< Success$/;"	m	class:ParseResult
 NotAtEof	tests/fsm_stream_reassembler_harness.hh	/^    NotAtEof() {}$/;"	f	struct:NotAtEof
 NotAtEof	tests/fsm_stream_reassembler_harness.hh	/^struct NotAtEof : public ReassemblerExpectation {$/;"	s
+OPCODE_REPLY	libsponge/tcp_helpers/arp_message.hh	/^    static constexpr uint16_t OPCODE_REPLY = 2;$/;"	m	struct:ARPMessage
+OPCODE_REQUEST	libsponge/tcp_helpers/arp_message.hh	/^    static constexpr uint16_t OPCODE_REQUEST = 1;$/;"	m	struct:ARPMessage
 Out	libsponge/util/eventloop.hh	/^        Out = POLLOUT  \/\/!< Callback will be triggered when Rule::fd is writable.$/;"	m	class:EventLoop::Direction
 PLATFORM_ID	bulid/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	339;"	d	file:
 PLATFORM_ID	bulid/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	342;"	d	file:
@@ -665,14 +681,18 @@ SPONGE_APPS_BIDIRECTIONAL_STREAM_COPY_HH	apps/bidirectional_stream_copy.hh	2;"	d
 SPONGE_BYTE_STREAM_HARNESS_HH	tests/byte_stream_test_harness.hh	2;"	d
 SPONGE_FSM_STREAM_REASSEMBLER_HARNESS_HH	tests/fsm_stream_reassembler_harness.hh	2;"	d
 SPONGE_LIBSPONGE_ADDRESS_HH	libsponge/util/address.hh	2;"	d
+SPONGE_LIBSPONGE_ARP_MESSAGE_HH	libsponge/tcp_helpers/arp_message.hh	2;"	d
 SPONGE_LIBSPONGE_BUFFER_HH	libsponge/util/buffer.hh	2;"	d
 SPONGE_LIBSPONGE_BYTE_STREAM_HH	libsponge/byte_stream.hh	2;"	d
+SPONGE_LIBSPONGE_ETHERNET_FRAME_HH	libsponge/tcp_helpers/ethernet_frame.hh	2;"	d
+SPONGE_LIBSPONGE_ETHERNET_HEADER_HH	libsponge/tcp_helpers/ethernet_header.hh	2;"	d
 SPONGE_LIBSPONGE_EVENTLOOP_HH	libsponge/util/eventloop.hh	2;"	d
 SPONGE_LIBSPONGE_FD_ADAPTER_HH	libsponge/tcp_helpers/fd_adapter.hh	2;"	d
 SPONGE_LIBSPONGE_FILE_DESCRIPTOR_HH	libsponge/util/file_descriptor.hh	2;"	d
 SPONGE_LIBSPONGE_IPV4_DATAGRAM_HH	libsponge/tcp_helpers/ipv4_datagram.hh	2;"	d
 SPONGE_LIBSPONGE_IPV4_HEADER_HH	libsponge/tcp_helpers/ipv4_header.hh	2;"	d
 SPONGE_LIBSPONGE_LOSSY_FD_ADAPTER_HH	libsponge/tcp_helpers/lossy_fd_adapter.hh	2;"	d
+SPONGE_LIBSPONGE_NETWORK_INTERFACE_HH	libsponge/network_interface.hh	2;"	d
 SPONGE_LIBSPONGE_PARSER_HH	libsponge/util/parser.hh	2;"	d
 SPONGE_LIBSPONGE_SEND_EQUIVALENCE_CHECKER_HH	tests/send_equivalence_checker.hh	2;"	d
 SPONGE_LIBSPONGE_SOCKET_HH	libsponge/util/socket.hh	2;"	d
@@ -746,6 +766,7 @@ SubmitSegment	tests/fsm_stream_reassembler_harness.hh	/^struct SubmitSegment : p
 Success	libsponge/util/eventloop.hh	/^        Success,  \/\/!< At least one Rule was triggered.$/;"	m	class:EventLoop::Direction::Result
 SystemCall	libsponge/util/util.cc	/^int SystemCall(const char *attempt, const int return_value, const int errno_mask) {$/;"	f
 SystemCall	libsponge/util/util.cc	/^int SystemCall(const string &attempt, const int return_value, const int errno_mask) {$/;"	f
+TAP_DFLT	apps/tcp_ip_ethernet.cc	/^constexpr const char *TAP_DFLT = "tap10";$/;"	v
 TCPAction	tests/tcp_expectation.hh	/^struct TCPAction : public TCPTestStep {$/;"	s
 TCPConfig	libsponge/tcp_helpers/tcp_config.hh	/^class TCPConfig {$/;"	c
 TCPConnection	libsponge/tcp_connection.hh	/^    explicit TCPConnection(const TCPConfig &cfg) : _cfg{cfg} {}$/;"	f	class:TCPConnection
@@ -755,6 +776,8 @@ TCPExpectationViolation	tests/tcp_expectation_forward.hh	/^    TCPExpectationVio
 TCPExpectationViolation	tests/tcp_expectation_forward.hh	/^class TCPExpectationViolation : public std::runtime_error {$/;"	c
 TCPHeader	libsponge/tcp_helpers/tcp_header.hh	/^struct TCPHeader {$/;"	s
 TCPOverIPv4Adapter	libsponge/tcp_helpers/tcp_over_ip.hh	/^class TCPOverIPv4Adapter : public FdAdapterBase {$/;"	c
+TCPOverIPv4OverEthernetAdapter	libsponge/tcp_helpers/tuntap_adapter.cc	/^TCPOverIPv4OverEthernetAdapter::TCPOverIPv4OverEthernetAdapter(TapFD &&tap,$/;"	f	class:TCPOverIPv4OverEthernetAdapter
+TCPOverIPv4OverEthernetAdapter	libsponge/tcp_helpers/tuntap_adapter.hh	/^class TCPOverIPv4OverEthernetAdapter : public TCPOverIPv4Adapter {$/;"	c
 TCPOverIPv4OverTunFdAdapter	libsponge/tcp_helpers/tuntap_adapter.hh	/^    explicit TCPOverIPv4OverTunFdAdapter(TunFD &&tun) : _tun(std::move(tun)) {}$/;"	f	class:TCPOverIPv4OverTunFdAdapter
 TCPOverIPv4OverTunFdAdapter	libsponge/tcp_helpers/tuntap_adapter.hh	/^class TCPOverIPv4OverTunFdAdapter : public TCPOverIPv4Adapter {$/;"	c
 TCPOverUDPSocketAdapter	libsponge/tcp_helpers/fd_adapter.hh	/^    explicit TCPOverUDPSocketAdapter(UDPSocket &&sock) : _sock(std::move(sock)) {}$/;"	f	class:TCPOverUDPSocketAdapter
@@ -788,6 +811,9 @@ TCP_TICK_MS	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^static constexpr size_t
 TIMEOUT_DFLT	libsponge/tcp_helpers/tcp_config.hh	/^    static constexpr uint16_t TIMEOUT_DFLT = 1000;     \/\/!< Default re-transmit timeout is 1 second$/;"	m	class:TCPConfig
 TIME_WAIT	libsponge/tcp_helpers/tcp_state.hh	/^        TIME_WAIT,    \/\/!< Both sides have sent FIN and ACK'd, waiting for 2 MSL$/;"	m	class:TCPState::State
 TUN_DFLT	apps/tcp_ipv4.cc	/^constexpr const char *TUN_DFLT = "tun144";$/;"	v
+TYPE_ARP	libsponge/tcp_helpers/ethernet_header.hh	/^    static constexpr uint16_t TYPE_ARP = 0x806;   \/\/!< Type number for [ARP](\\ref rfc::rfc826)$/;"	m	struct:EthernetHeader
+TYPE_ETHERNET	libsponge/tcp_helpers/arp_message.hh	/^    static constexpr uint16_t TYPE_ETHERNET = 1;  \/\/!< ARP type for Ethernet\/Wi-Fi as link-layer protocol$/;"	m	struct:ARPMessage
+TYPE_IPv4	libsponge/tcp_helpers/ethernet_header.hh	/^    static constexpr uint16_t TYPE_IPv4 = 0x800;  \/\/!< Type number for [IPv4](\\ref rfc::rfc791)$/;"	m	struct:EthernetHeader
 TapFD	libsponge/util/tun.hh	/^    explicit TapFD(const std::string &devname) : TunTapFD(devname, false) {}$/;"	f	class:TapFD
 TapFD	libsponge/util/tun.hh	/^class TapFD : public TunTapFD {$/;"	c
 TestFD	tests/tcp_fsm_test_harness.cc	/^TestFD::TestFD()$/;"	f	class:TestFD
@@ -859,6 +885,7 @@ _eof	libsponge/util/file_descriptor.hh	/^        bool _eof = false;          \/\
 _eof	tests/byte_stream_test_harness.hh	/^    bool _eof;$/;"	m	struct:Eof
 _error	libsponge/byte_stream.hh	/^    bool _error;  \/\/!< Flag indicating that the stream suffered an error.$/;"	m	class:ByteStream
 _error	libsponge/util/parser.hh	/^    ParseResult _error = ParseResult::NoError;  \/\/!< Result of parsing so far$/;"	m	class:NetParser
+_ethernet_address	libsponge/network_interface.hh	/^    EthernetAddress _ethernet_address;$/;"	m	class:NetworkInterface
 _fd	libsponge/util/file_descriptor.hh	/^        int _fd;                    \/\/!< The file descriptor number returned by the kernel$/;"	m	class:FileDescriptor::FDWrapper
 _fsm	tests/tcp_fsm_test_harness.hh	/^    TCPConnection _fsm;    \/\/!< The TCPConnection under test$/;"	m	class:TCPTestHarness
 _head	libsponge/byte_stream.hh	/^    size_t _head;$/;"	m	class:ByteStream
@@ -867,8 +894,10 @@ _initial_RTO	libsponge/tcp_sender.hh	/^        const unsigned int _initial_RTO;$
 _initial_retransmission_timeout	libsponge/tcp_sender.hh	/^    unsigned int _initial_retransmission_timeout;$/;"	m	class:TCPSender
 _initialize_TCP	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^void TCPSpongeSocket<AdaptT>::_initialize_TCP(const TCPConfig &config) {$/;"	f	class:TCPSpongeSocket
 _input_ended	tests/byte_stream_test_harness.hh	/^    bool _input_ended;$/;"	m	struct:InputEnded
+_interface	libsponge/tcp_helpers/tuntap_adapter.hh	/^    NetworkInterface _interface;  \/\/!< NIC abstraction$/;"	m	class:TCPOverIPv4OverEthernetAdapter
 _interface	tests/network_interface_test_harness.hh	/^    NetworkInterface _interface;$/;"	m	class:NetworkInterfaceTestHarness
 _internal_fd	libsponge/util/file_descriptor.hh	/^    std::shared_ptr<FDWrapper> _internal_fd;$/;"	m	class:FileDescriptor
+_ip_address	libsponge/network_interface.hh	/^    Address _ip_address;$/;"	m	class:NetworkInterface
 _isn	libsponge/tcp_receiver.hh	/^    WrappingInt32 _isn;$/;"	m	class:TCPReceiver
 _isn	libsponge/tcp_sender.hh	/^    WrappingInt32 _isn;$/;"	m	class:TCPSender
 _len	tests/byte_stream_test_harness.hh	/^    size_t _len;$/;"	m	struct:Pop
@@ -879,6 +908,7 @@ _ms	tests/sender_harness.hh	/^    size_t _ms;$/;"	m	struct:Tick
 _n_bytes	tests/receiver_harness.hh	/^    size_t _n_bytes;$/;"	m	struct:ExpectTotalAssembledBytes
 _n_bytes	tests/receiver_harness.hh	/^    size_t _n_bytes;$/;"	m	struct:ExpectUnassembledBytes
 _n_bytes	tests/sender_harness.hh	/^    size_t _n_bytes;$/;"	m	struct:ExpectBytesInFlight
+_next_hop	libsponge/tcp_helpers/tuntap_adapter.hh	/^    Address _next_hop;  \/\/!< IP address of the next hop$/;"	m	class:TCPOverIPv4OverEthernetAdapter
 _nidx	libsponge/stream_reassembler.hh	/^    size_t _nidx;$/;"	m	class:StreamReassembler
 _output	libsponge/stream_reassembler.hh	/^    ByteStream _output;  \/\/!< The reassembled in-order byte stream$/;"	m	class:StreamReassembler
 _output	tests/byte_stream_test_harness.hh	/^    std::string _output;$/;"	m	struct:Peek
@@ -904,6 +934,7 @@ _sum	libsponge/util/util.hh	/^    uint32_t _sum;$/;"	m	class:InternetChecksum
 _syn_arrived	libsponge/tcp_receiver.hh	/^    bool _syn_arrived;$/;"	m	class:TCPReceiver
 _sz	libsponge/byte_stream.hh	/^    size_t _sz;$/;"	m	class:ByteStream
 _tail	libsponge/byte_stream.hh	/^    size_t _tail;$/;"	m	class:ByteStream
+_tap	libsponge/tcp_helpers/tuntap_adapter.hh	/^    TapFD _tap;  \/\/!< Raw Ethernet connection$/;"	m	class:TCPOverIPv4OverEthernetAdapter
 _tcp_loop	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^void TCPSpongeSocket<AdaptT>::_tcp_loop(const function<bool()> &condition) {$/;"	f	class:TCPSpongeSocket
 _tcp_main	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^void TCPSpongeSocket<AdaptT>::_tcp_main() {$/;"	f	class:TCPSpongeSocket
 _test_err_if	tests/test_err_if.hh	/^static void _test_err_if(const bool err_condition, const std::string &err_string, const int lineno) {$/;"	f
@@ -960,13 +991,18 @@ can_read	tests/tcp_fsm_test_harness.hh	/^    bool can_read() const { return _rec
 cancel	libsponge/util/eventloop.hh	/^        CallbackT cancel;     \/\/!< A callback that is called when the rule is cancelled (e.g. on hangup)$/;"	m	class:EventLoop::Direction::Rule
 capacity	libsponge/tcp_sender.cc	/^    , _stream(capacity)$/;"	v
 check_arg	apps/udp_tcpdump.cc	/^static void check_arg(char *arg0, int argc, int curr, const char *errmsg) {$/;"	f	file:
+check_argc	apps/tcp_ip_ethernet.cc	/^static void check_argc(int argc, char **argv, int curr, const char *err) {$/;"	f	file:
 check_argc	apps/tcp_ipv4.cc	/^static void check_argc(int argc, char **argv, int curr, const char *err) {$/;"	f	file:
 check_argc	apps/tcp_udp.cc	/^static void check_argc(int argc, char **argv, int curr, const char *err) {$/;"	f	file:
 check_empty	tests/send_equivalence_checker.cc	/^void SendEquivalenceChecker::check_empty() const {$/;"	f	class:SendEquivalenceChecker
 check_equivalent_segments	tests/send_equivalence_checker.cc	/^void check_equivalent_segments(const TCPSegment &a, const TCPSegment &b) {$/;"	f
 check_roundtrip	tests/wrapping_integers_roundtrip.cc	/^void check_roundtrip(const WrappingInt32 isn, const uint64_t value, const uint64_t checkpoint) {$/;"	f
 check_segment	tests/fsm_retx.hh	/^static void check_segment(TCPTestHarness &test, const std::string &data, const bool multiple, const int lineno) {$/;"	f
+check_sudo	libsponge/tap.sh	/^check_sudo () {$/;"	f
+check_sudo	tap.sh	/^check_sudo () {$/;"	f
 check_sudo	tun.sh	/^check_sudo () {$/;"	f
+check_tap	libsponge/tap.sh	/^check_tap () {$/;"	f
+check_tap	tap.sh	/^check_tap () {$/;"	f
 check_tun	tun.sh	/^check_tun () {$/;"	f
 cksum	libsponge/tcp_helpers/ipv4_header.hh	/^    uint16_t cksum = 0;         \/\/!< checksum field$/;"	m	struct:IPv4Header
 cksum	libsponge/tcp_helpers/tcp_header.hh	/^    uint16_t cksum = 0;         \/\/!< checksum$/;"	m	struct:TCPHeader
@@ -987,6 +1023,7 @@ config_mutable	libsponge/tcp_helpers/fd_adapter.hh	/^    FdAdapterConfig &config
 config_segment	tests/tcp_fsm_test_harness.cc	/^void TestFdAdapter::config_segment(TCPSegment &seg) {$/;"	f	class:TestFdAdapter
 connect	libsponge/tcp_connection.cc	/^void TCPConnection::connect() {$/;"	f	class:TCPConnection
 connect	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^void CS144TCPSocket::connect(const Address &address) {$/;"	f	class:CS144TCPSocket
+connect	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^void FullStackSocket::connect(const Address &address) {$/;"	f	class:FullStackSocket
 connect	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^void TCPSpongeSocket<AdaptT>::connect(const TCPConfig &c_tcp, const FdAdapterConfig &c_ad) {$/;"	f	class:TCPSpongeSocket
 connect	libsponge/util/socket.cc	/^void Socket::connect(const Address &address) { SystemCall("connect", ::connect(fd_num(), address, address.size())); }$/;"	f	class:Socket
 consecutive_retransmissions	libsponge/tcp_sender.cc	/^unsigned int TCPSender::consecutive_retransmissions() const { return _timer.consecutive_retransmissions(); }$/;"	f	class:TCPSender
@@ -1067,6 +1104,7 @@ dgram	tests/network_interface_test_harness.hh	/^    InternetDatagram dgram;$/;"	
 direction	libsponge/util/eventloop.hh	/^        Direction direction;  \/\/!< Direction::In for reading from fd, Direction::Out for writing to fd.$/;"	m	class:EventLoop::Direction::Rule
 doff	libsponge/tcp_helpers/tcp_header.hh	/^    uint8_t doff = LENGTH \/ 4;  \/\/!< data offset$/;"	m	struct:TCPHeader
 dport	libsponge/tcp_helpers/tcp_header.hh	/^    uint16_t dport = 0;         \/\/!< destination port$/;"	m	struct:TCPHeader
+dst	libsponge/tcp_helpers/ethernet_header.hh	/^    EthernetAddress dst;$/;"	m	struct:EthernetHeader
 dst	libsponge/tcp_helpers/ipv4_header.hh	/^    uint32_t dst = 0;           \/\/!< dst address$/;"	m	struct:IPv4Header
 duplicate	libsponge/util/file_descriptor.cc	/^FileDescriptor FileDescriptor::duplicate() const { return FileDescriptor(_internal_fd); }$/;"	f	class:FileDescriptor
 empty	libsponge/stream_reassembler.cc	/^bool StreamReassembler::empty() const { return _unassembled_bytes == 0; }$/;"	f	class:StreamReassembler
@@ -1170,17 +1208,23 @@ fd_num	libsponge/util/file_descriptor.hh	/^    int fd_num() const { return _inte
 fill_window	libsponge/tcp_sender.cc	/^void TCPSender::fill_window() {$/;"	f	class:TCPSender
 fin	libsponge/tcp_helpers/tcp_header.hh	/^    bool fin = false;           \/\/!< fin flag$/;"	m	struct:TCPHeader
 frame	tests/network_interface_test_harness.hh	/^    EthernetFrame frame;$/;"	m	struct:ReceiveFrame
+frames_out	libsponge/network_interface.hh	/^    std::queue<EthernetFrame> &frames_out() { return _frames_out; }$/;"	f	class:NetworkInterface
 from_ipv4_numeric	libsponge/util/address.cc	/^Address Address::from_ipv4_numeric(const uint32_t ip_address) {$/;"	f	class:Address
 gai_error_category	libsponge/util/address.cc	/^class gai_error_category : public error_category {$/;"	c	file:
 get_URL	apps/webget.cc	/^void get_URL(const string &host, const string &path) {$/;"	f
 get_address	libsponge/util/socket.cc	/^Address Socket::get_address(const string &name_of_function,$/;"	f	class:Socket
 get_cmdline_options	txrx.sh	/^get_cmdline_options () {$/;"	f
+get_config	apps/tcp_ip_ethernet.cc	/^static tuple<TCPConfig, FdAdapterConfig, Address, string> get_config(int argc, char **argv) {$/;"	f	file:
 get_config	apps/tcp_ipv4.cc	/^static tuple<TCPConfig, FdAdapterConfig, bool, char *> get_config(int argc, char **argv) {$/;"	f	file:
 get_config	apps/tcp_udp.cc	/^static tuple<TCPConfig, FdAdapterConfig, bool> get_config(int argc, char **argv) {$/;"	f	file:
 get_error	libsponge/util/parser.hh	/^    ParseResult get_error() const { return _error; }$/;"	f	class:NetParser
 get_random_generator	libsponge/util/util.cc	/^mt19937 get_random_generator() {$/;"	f
 get_segment	tests/tcp_expectation.hh	/^    TCPSegment get_segment() const {$/;"	f	struct:SendSegment
+hardware_address_size	libsponge/tcp_helpers/arp_message.hh	/^    uint8_t hardware_address_size = sizeof(EthernetHeader::src);$/;"	m	struct:ARPMessage
+hardware_type	libsponge/tcp_helpers/arp_message.hh	/^    uint16_t hardware_type = TYPE_ETHERNET;              \/\/!< Type of the link-layer protocol (generally Ethernet\/Wi-Fi)$/;"	m	struct:ARPMessage
 hash_file	txrx.sh	/^hash_file () {$/;"	f
+header	libsponge/tcp_helpers/ethernet_frame.hh	/^    EthernetHeader &header() { return _header; }$/;"	f	class:EthernetFrame
+header	libsponge/tcp_helpers/ethernet_frame.hh	/^    const EthernetHeader &header() const { return _header; }$/;"	f	class:EthernetFrame
 header	libsponge/tcp_helpers/ipv4_datagram.hh	/^    IPv4Header &header() { return _header; }$/;"	f	class:IPv4Datagram
 header	libsponge/tcp_helpers/ipv4_datagram.hh	/^    const IPv4Header &header() const { return _header; }$/;"	f	class:IPv4Datagram
 header	libsponge/tcp_helpers/tcp_segment.hh	/^    TCPHeader &header() { return _header; }$/;"	f	class:TCPSegment
@@ -1235,6 +1279,7 @@ local_address	libsponge/util/socket.cc	/^Address Socket::local_address() const {
 loss_rate_dn	libsponge/tcp_helpers/tcp_config.hh	/^    uint16_t loss_rate_dn = 0;  \/\/!< Downlink loss rate (for LossyFdAdapter)$/;"	m	class:FdAdapterConfig
 loss_rate_up	libsponge/tcp_helpers/tcp_config.hh	/^    uint16_t loss_rate_up = 0;  \/\/!< Uplink loss rate (for LossyFdAdapter)$/;"	m	class:FdAdapterConfig
 main	apps/tcp_benchmark.cc	/^int main() {$/;"	f
+main	apps/tcp_ip_ethernet.cc	/^int main(int argc, char **argv) {$/;"	f
 main	apps/tcp_ipv4.cc	/^int main(int argc, char **argv) {$/;"	f
 main	apps/tcp_native.cc	/^int main(int argc, char **argv) {$/;"	f
 main	apps/tcp_udp.cc	/^int main(int argc, char **argv) {$/;"	f
@@ -1313,7 +1358,7 @@ ms_since_last_tick	tests/tcp_expectation.hh	/^    size_t ms_since_last_tick;$/;"
 name	libsponge/tcp_helpers/tcp_state.cc	/^string TCPState::name() const {$/;"	f	class:TCPState
 name	tests/sender_harness.hh	/^    std::string name;$/;"	m	class:TCPSenderTestHarness
 next_hop	tests/network_interface_test_harness.hh	/^    Address next_hop;$/;"	m	struct:SendDatagram
-next_idx	libsponge/stream_reassembler.hh	/^    size_t next_idx() const {return _nidx;};$/;"	f	class:StreamReassembler
+next_idx	libsponge/stream_reassembler.hh	/^    size_t next_idx() const {return _nidx;}$/;"	f	class:StreamReassembler
 next_seqno	libsponge/tcp_sender.hh	/^    WrappingInt32 next_seqno() const { return wrap(_next_seqno, _isn); }$/;"	f	class:TCPSender
 next_seqno_absolute	libsponge/tcp_sender.hh	/^    uint64_t next_seqno_absolute() const { return _next_seqno; }$/;"	f	class:TCPSender
 off	libsponge/tcp_sender.hh	/^        void off() {_running = false;}$/;"	f	class:Timer
@@ -1331,9 +1376,11 @@ operator ==	libsponge/tcp_helpers/tcp_state.cc	/^bool TCPState::operator==(const
 operator ==	libsponge/util/address.cc	/^bool Address::operator==(const Address &other) const {$/;"	f	class:Address
 operator ==	libsponge/wrapping_integers.hh	/^inline bool operator==(WrappingInt32 a, WrappingInt32 b) { return a.raw_value() == b.raw_value(); }$/;"	f
 operator Buffer	libsponge/util/buffer.cc	/^BufferList::operator Buffer() const {$/;"	f	class:BufferList
+operator TapFD &	libsponge/tcp_helpers/tuntap_adapter.hh	/^    operator TapFD &() { return _tap; }$/;"	f	class:TCPOverIPv4OverEthernetAdapter
 operator TunFD &	libsponge/tcp_helpers/tuntap_adapter.hh	/^    operator TunFD &() { return _tun; }$/;"	f	class:TCPOverIPv4OverTunFdAdapter
 operator UDPSocket &	libsponge/tcp_helpers/fd_adapter.hh	/^    operator UDPSocket &() { return _sock; }$/;"	f	class:TCPOverUDPSocketAdapter
 operator const FileDescriptor &	libsponge/tcp_helpers/lossy_fd_adapter.hh	/^    operator const FileDescriptor &() const { return _adapter; }$/;"	f	class:LossyFdAdapter
+operator const TapFD &	libsponge/tcp_helpers/tuntap_adapter.hh	/^    operator const TapFD &() const { return _tap; }$/;"	f	class:TCPOverIPv4OverEthernetAdapter
 operator const TunFD &	libsponge/tcp_helpers/tuntap_adapter.hh	/^    operator const TunFD &() const { return _tun; }$/;"	f	class:TCPOverIPv4OverTunFdAdapter
 operator const UDPSocket &	libsponge/tcp_helpers/fd_adapter.hh	/^    operator const UDPSocket &() const { return _sock; }$/;"	f	class:TCPOverUDPSocketAdapter
 operator const sockaddr *	libsponge/util/address.cc	/^Address::Raw::operator const sockaddr *() const { return reinterpret_cast<const sockaddr *>(&storage); }$/;"	f	class:Address::Raw
@@ -1411,11 +1458,16 @@ override	tests/network_interface_test_harness.hh	/^    void execute(NetworkInter
 override	tests/network_interface_test_harness.hh	/^    void execute(NetworkInterface &interface) const override;$/;"	m	struct:ReceiveFrame
 override	tests/network_interface_test_harness.hh	/^    void execute(NetworkInterface &interface) const override;$/;"	m	struct:SendDatagram
 override	tests/network_interface_test_harness.hh	/^    void execute(NetworkInterface &interface) const override;$/;"	m	struct:Tick
+parse	libsponge/tcp_helpers/arp_message.cc	/^ParseResult ARPMessage::parse(const Buffer buffer) {$/;"	f	class:ARPMessage
+parse	libsponge/tcp_helpers/ethernet_frame.cc	/^ParseResult EthernetFrame::parse(const Buffer buffer) {$/;"	f	class:EthernetFrame
+parse	libsponge/tcp_helpers/ethernet_header.cc	/^ParseResult EthernetHeader::parse(NetParser &p) {$/;"	f	class:EthernetHeader
 parse	libsponge/tcp_helpers/ipv4_datagram.cc	/^ParseResult IPv4Datagram::parse(const Buffer buffer) {$/;"	f	class:IPv4Datagram
 parse	libsponge/tcp_helpers/ipv4_header.cc	/^ParseResult IPv4Header::parse(NetParser &p) {$/;"	f	class:IPv4Header
 parse	libsponge/tcp_helpers/tcp_header.cc	/^ParseResult TCPHeader::parse(NetParser &p) {$/;"	f	class:TCPHeader
 parse	libsponge/tcp_helpers/tcp_segment.cc	/^ParseResult TCPSegment::parse(const Buffer buffer, const uint32_t datagram_layer_checksum) {$/;"	f	class:TCPSegment
 parse_arguments	apps/udp_tcpdump.cc	/^static int parse_arguments(int argc, char **argv, char **dev_ptr) {$/;"	f	file:
+payload	libsponge/tcp_helpers/ethernet_frame.hh	/^    BufferList &payload() { return _payload; }$/;"	f	class:EthernetFrame
+payload	libsponge/tcp_helpers/ethernet_frame.hh	/^    const BufferList &payload() const { return _payload; }$/;"	f	class:EthernetFrame
 payload	libsponge/tcp_helpers/ipv4_datagram.hh	/^    BufferList &payload() { return _payload; }$/;"	f	class:IPv4Datagram
 payload	libsponge/tcp_helpers/ipv4_datagram.hh	/^    const BufferList &payload() const { return _payload; }$/;"	f	class:IPv4Datagram
 payload	libsponge/tcp_helpers/tcp_segment.hh	/^    Buffer &payload() { return _payload; }$/;"	f	class:TCPSegment
@@ -1432,17 +1484,21 @@ process_ipv4_ipv6	apps/udp_tcpdump.cc	/^static int process_ipv4_ipv6(int len, co
 property	tests/byte_stream_test_harness.cc	/^ByteStreamExpectationViolation ByteStreamExpectationViolation::property(const std::string &property_name,$/;"	f	class:ByteStreamExpectationViolation
 property	tests/network_interface_test_harness.cc	/^NetworkInterfaceExpectationViolation NetworkInterfaceExpectationViolation::property(const std::string &property_name,$/;"	f	class:NetworkInterfaceExpectationViolation
 proto	libsponge/tcp_helpers/ipv4_header.hh	/^    uint8_t proto = PROTO_TCP;  \/\/!< protocol field$/;"	m	struct:IPv4Header
+protocol_address_size	libsponge/tcp_helpers/arp_message.hh	/^    uint8_t protocol_address_size = sizeof(IPv4Header::src);$/;"	m	struct:ARPMessage
+protocol_type	libsponge/tcp_helpers/arp_message.hh	/^    uint16_t protocol_type = EthernetHeader::TYPE_IPv4;  \/\/!< Type of the Internet-layer protocol (generally IPv4)$/;"	m	struct:ARPMessage
 pseudo_cksum	libsponge/tcp_helpers/ipv4_header.cc	/^uint32_t IPv4Header::pseudo_cksum() const {$/;"	f	class:IPv4Header
 psh	libsponge/tcp_helpers/tcp_header.hh	/^    bool psh = false;           \/\/!< push flag$/;"	m	struct:TCPHeader
 push_outstanding	libsponge/tcp_sender.hh	/^        void push_outstanding(const TCPSegment& seg, const uint64_t end_seqno) { _outstandings.emplace(seg,end_seqno); }$/;"	f	class:Timer
 push_substring	libsponge/stream_reassembler.cc	/^void StreamReassembler::push_substring(const string &data, const size_t index, const bool eof) {$/;"	f	class:StreamReassembler
 qnxnto	bulid/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
 qnxnto	bulid/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
+random_private_ethernet_address	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^EthernetAddress random_private_ethernet_address() {$/;"	f
 random_private_ethernet_address	tests/net_interface.cc	/^EthernetAddress random_private_ethernet_address() {$/;"	f
 raw_value	libsponge/wrapping_integers.hh	/^    uint32_t raw_value() const { return _raw_value; }  \/\/!< Access raw stored value$/;"	f	class:WrappingInt32
 read	libsponge/byte_stream.cc	/^std::string ByteStream::read(const size_t len) {$/;"	f	class:ByteStream
 read	libsponge/tcp_helpers/fd_adapter.cc	/^optional<TCPSegment> TCPOverUDPSocketAdapter::read() {$/;"	f	class:TCPOverUDPSocketAdapter
 read	libsponge/tcp_helpers/lossy_fd_adapter.hh	/^    std::optional<TCPSegment> read() {$/;"	f	class:LossyFdAdapter
+read	libsponge/tcp_helpers/tuntap_adapter.cc	/^optional<TCPSegment> TCPOverIPv4OverEthernetAdapter::read() {$/;"	f	class:TCPOverIPv4OverEthernetAdapter
 read	libsponge/tcp_helpers/tuntap_adapter.hh	/^    std::optional<TCPSegment> read() {$/;"	f	class:TCPOverIPv4OverTunFdAdapter
 read	libsponge/util/file_descriptor.cc	/^string FileDescriptor::read(const size_t limit) {$/;"	f	class:FileDescriptor
 read	libsponge/util/file_descriptor.cc	/^void FileDescriptor::read(std::string &str, const size_t limit) {$/;"	f	class:FileDescriptor
@@ -1457,6 +1513,7 @@ receiver	tests/receiver_harness.hh	/^    TCPReceiver receiver;$/;"	m	class:TCPRe
 recv	libsponge/util/socket.cc	/^UDPSocket::received_datagram UDPSocket::recv(const size_t mtu) {$/;"	f	class:UDPSocket
 recv	libsponge/util/socket.cc	/^void UDPSocket::recv(received_datagram &datagram, const size_t mtu) {$/;"	f	class:UDPSocket
 recv_capacity	libsponge/tcp_helpers/tcp_config.hh	/^    size_t recv_capacity = DEFAULT_CAPACITY;  \/\/!< Receive capacity, in bytes$/;"	m	class:TCPConfig
+recv_frame	libsponge/network_interface.cc	/^optional<InternetDatagram> NetworkInterface::recv_frame(const EthernetFrame &frame) {$/;"	f	class:NetworkInterface
 recvd	doctests/socket_example_1.cc	/^auto recvd = sock1.recv();$/;"	v
 recvd	doctests/socket_example_2.cc	/^auto recvd = sock2.read();$/;"	v
 recvd	doctests/socket_example_3.cc	/^auto recvd = pipe2.read();$/;"	v
@@ -1473,6 +1530,8 @@ remove_prefix	libsponge/util/buffer.cc	/^void Buffer::remove_prefix(const size_t
 remove_prefix	libsponge/util/buffer.cc	/^void BufferList::remove_prefix(size_t n) {$/;"	f	class:BufferList
 remove_prefix	libsponge/util/buffer.cc	/^void BufferViewList::remove_prefix(size_t n) {$/;"	f	class:BufferViewList
 remove_prefix	libsponge/util/parser.cc	/^void NetParser::remove_prefix(const size_t n) {$/;"	f	class:NetParser
+restart_all	libsponge/tap.sh	/^restart_all() {$/;"	f
+restart_all	tap.sh	/^restart_all() {$/;"	f
 restart_all	tun.sh	/^restart_all() {$/;"	f
 result_name	tests/receiver_harness.hh	/^    static std::string result_name(Result res) {$/;"	f	struct:SegmentArrives
 rst	libsponge/tcp_helpers/tcp_header.hh	/^    bool rst = false;           \/\/!< rst flag$/;"	m	struct:TCPHeader
@@ -1489,14 +1548,19 @@ send_ack	tests/tcp_fsm_test_harness.cc	/^void TCPTestHarness::send_ack(const Wra
 send_byte	tests/tcp_fsm_test_harness.cc	/^void TCPTestHarness::send_byte(const WrappingInt32 seqno, const optional<WrappingInt32> ackno, const uint8_t val) {$/;"	f	class:TCPTestHarness
 send_capacity	libsponge/tcp_helpers/tcp_config.hh	/^    size_t send_capacity = DEFAULT_CAPACITY;  \/\/!< Sender capacity, in bytes$/;"	m	class:TCPConfig
 send_data	tests/tcp_fsm_test_harness.cc	/^void TCPTestHarness::send_data(const WrappingInt32 seqno, const WrappingInt32 ackno, VecIterT begin, VecIterT end) {$/;"	f	class:TCPTestHarness
+send_datagram	libsponge/network_interface.cc	/^void NetworkInterface::send_datagram(const InternetDatagram &dgram, const Address &next_hop) {$/;"	f	class:NetworkInterface
 send_empty_segment	libsponge/tcp_sender.cc	/^void TCPSender::send_empty_segment() {$/;"	f	class:TCPSender
 send_fin	tests/tcp_fsm_test_harness.cc	/^void TCPTestHarness::send_fin(const WrappingInt32 seqno, const optional<WrappingInt32> ackno) {$/;"	f	class:TCPTestHarness
+send_pending	libsponge/tcp_helpers/tuntap_adapter.cc	/^void TCPOverIPv4OverEthernetAdapter::send_pending() {$/;"	f	class:TCPOverIPv4OverEthernetAdapter
 send_rst	libsponge/tcp_connection.cc	/^void TCPConnection::send_rst(){$/;"	f	class:TCPConnection
 send_rst	tests/tcp_fsm_test_harness.cc	/^void TCPTestHarness::send_rst(const WrappingInt32 seqno, const optional<WrappingInt32> ackno) {$/;"	f	class:TCPTestHarness
 send_syn	tests/tcp_fsm_test_harness.cc	/^void TCPTestHarness::send_syn(const WrappingInt32 seqno, const optional<WrappingInt32> ackno) {$/;"	f	class:TCPTestHarness
 sender	tests/sender_harness.hh	/^    TCPSender sender;$/;"	m	class:TCPSenderTestHarness
 sendmsg_helper	libsponge/util/socket.cc	/^void sendmsg_helper(const int fd_num,$/;"	f
 sendto	libsponge/util/socket.cc	/^void UDPSocket::sendto(const Address &destination, const BufferViewList &payload) {$/;"	f	class:UDPSocket
+serialize	libsponge/tcp_helpers/arp_message.cc	/^string ARPMessage::serialize() const {$/;"	f	class:ARPMessage
+serialize	libsponge/tcp_helpers/ethernet_frame.cc	/^BufferList EthernetFrame::serialize() const {$/;"	f	class:EthernetFrame
+serialize	libsponge/tcp_helpers/ethernet_header.cc	/^string EthernetHeader::serialize() const {$/;"	f	class:EthernetHeader
 serialize	libsponge/tcp_helpers/ipv4_datagram.cc	/^BufferList IPv4Datagram::serialize() const {$/;"	f	class:IPv4Datagram
 serialize	libsponge/tcp_helpers/ipv4_header.cc	/^string IPv4Header::serialize() const {$/;"	f	class:IPv4Header
 serialize	libsponge/tcp_helpers/tcp_header.cc	/^string TCPHeader::serialize() const {$/;"	f	class:TCPHeader
@@ -1510,10 +1574,13 @@ set_listening	libsponge/tcp_helpers/lossy_fd_adapter.hh	/^    void set_listening
 set_reuseaddr	libsponge/util/socket.cc	/^void Socket::set_reuseaddr() { setsockopt(SOL_SOCKET, SO_REUSEADDR, int(true)); }$/;"	f	class:Socket
 setsockopt	libsponge/util/socket.cc	/^void Socket::setsockopt(const int level, const int option, const option_type &option_value) {$/;"	f	class:Socket
 show_ethernet_frame	tests/test_utils.hh	/^inline void show_ethernet_frame(const uint8_t *pkt, const struct pcap_pkthdr &hdr) {$/;"	f
+show_usage	apps/tcp_ip_ethernet.cc	/^static void show_usage(const char *argv0, const char *msg) {$/;"	f	file:
 show_usage	apps/tcp_ipv4.cc	/^static void show_usage(const char *argv0, const char *msg) {$/;"	f	file:
 show_usage	apps/tcp_native.cc	/^void show_usage(const char *argv0) {$/;"	f
 show_usage	apps/tcp_udp.cc	/^static void show_usage(const char *argv0, const char *msg) {$/;"	f	file:
 show_usage	apps/udp_tcpdump.cc	/^static void show_usage(const char *arg0, const char *errmsg) {$/;"	f	file:
+show_usage	libsponge/tap.sh	/^show_usage () {$/;"	f
+show_usage	tap.sh	/^show_usage () {$/;"	f
 show_usage	tun.sh	/^show_usage () {$/;"	f
 show_usage	txrx.sh	/^show_usage() {$/;"	f
 shutdown	libsponge/util/socket.cc	/^void Socket::shutdown(const int how) {$/;"	f	class:Socket
@@ -1530,8 +1597,13 @@ socket_pair_helper	libsponge/tcp_helpers/tcp_sponge_socket.cc	/^static inline pa
 source_address	libsponge/util/socket.hh	/^        Address source_address;  \/\/!< Address from which this datagram was received$/;"	m	struct:UDPSocket::received_datagram
 sponge_conversions	tests/string_conversions.hh	/^namespace sponge_conversions {$/;"	n
 sport	libsponge/tcp_helpers/tcp_header.hh	/^    uint16_t sport = 0;         \/\/!< source port$/;"	m	struct:TCPHeader
+src	libsponge/tcp_helpers/ethernet_header.hh	/^    EthernetAddress src;$/;"	m	struct:EthernetHeader
 src	libsponge/tcp_helpers/ipv4_header.hh	/^    uint32_t src = 0;           \/\/!< src address$/;"	m	struct:IPv4Header
+start_all	libsponge/tap.sh	/^start_all () {$/;"	f
+start_all	tap.sh	/^start_all () {$/;"	f
 start_all	tun.sh	/^start_all () {$/;"	f
+start_tap	libsponge/tap.sh	/^start_tap () {$/;"	f
+start_tap	tap.sh	/^start_tap () {$/;"	f
 start_tun	tun.sh	/^start_tun () {$/;"	f
 state	libsponge/tcp_connection.hh	/^    TCPState state() const { return {_sender, _receiver, active(), _linger_after_streams_finish}; };$/;"	f	class:TCPConnection
 state	tests/tcp_expectation.hh	/^    TCPState state;$/;"	m	struct:ExpectNotInState
@@ -1541,7 +1613,11 @@ state_summary	libsponge/tcp_helpers/tcp_state.cc	/^string TCPState::state_summar
 steps_executed	tests/fsm_stream_reassembler_harness.hh	/^    std::vector<std::string> steps_executed;$/;"	m	class:ReassemblerTestHarness
 steps_executed	tests/receiver_harness.hh	/^    std::vector<std::string> steps_executed;$/;"	m	class:TCPReceiverTestHarness
 steps_executed	tests/sender_harness.hh	/^    std::vector<std::string> steps_executed;$/;"	m	class:TCPSenderTestHarness
+stop_all	libsponge/tap.sh	/^stop_all () {$/;"	f
+stop_all	tap.sh	/^stop_all () {$/;"	f
 stop_all	tun.sh	/^stop_all () {$/;"	f
+stop_tap	libsponge/tap.sh	/^stop_tap () {$/;"	f
+stop_tap	tap.sh	/^stop_tap () {$/;"	f
 stop_tun	tun.sh	/^stop_tun () {$/;"	f
 str	libsponge/util/buffer.hh	/^    std::string_view str() const {$/;"	f	class:Buffer
 stream_in	libsponge/tcp_sender.hh	/^    ByteStream &stream_in() { return _stream; }$/;"	f	class:TCPSender
@@ -1555,6 +1631,7 @@ submit_b	tests/send_equivalence_checker.cc	/^void SendEquivalenceChecker::submit
 summary	libsponge/tcp_helpers/ipv4_header.cc	/^std::string IPv4Header::summary() const {$/;"	f	class:IPv4Header
 summary	libsponge/tcp_helpers/tcp_header.cc	/^string TCPHeader::summary() const {$/;"	f	class:TCPHeader
 summary	tests/network_interface_test_harness.cc	/^string summary(const EthernetFrame &frame) {$/;"	f
+supported	libsponge/tcp_helpers/arp_message.cc	/^bool ARPMessage::supported() const {$/;"	f	class:ARPMessage
 syn	libsponge/tcp_helpers/tcp_header.hh	/^    bool syn = false;           \/\/!< syn flag$/;"	m	struct:TCPHeader
 tagged_error	libsponge/util/util.hh	/^    tagged_error(const std::error_category &category, const std::string &attempt, const int error_code)$/;"	f	class:tagged_error
 tagged_error	libsponge/util/util.hh	/^class tagged_error : public std::system_error {$/;"	c
@@ -1562,13 +1639,18 @@ test_connect	txrx.sh	/^test_connect () {$/;"	f
 test_err_if	tests/test_err_if.hh	9;"	d
 test_listen	txrx.sh	/^test_listen () {$/;"	f
 test_should_be	tests/test_should_be.hh	11;"	d
+tick	libsponge/network_interface.cc	/^void NetworkInterface::tick(const size_t ms_since_last_tick) { DUMMY_CODE(ms_since_last_tick); }$/;"	f	class:NetworkInterface
 tick	libsponge/tcp_connection.cc	/^void TCPConnection::tick(const size_t ms_since_last_tick) {$/;"	f	class:TCPConnection
 tick	libsponge/tcp_helpers/fd_adapter.hh	/^    void tick(const size_t) {}$/;"	f	class:FdAdapterBase
 tick	libsponge/tcp_helpers/lossy_fd_adapter.hh	/^    void tick(const size_t ms_since_last_tick) {$/;"	f	class:LossyFdAdapter
+tick	libsponge/tcp_helpers/tuntap_adapter.cc	/^void TCPOverIPv4OverEthernetAdapter::tick(const size_t ms_since_last_tick) {$/;"	f	class:TCPOverIPv4OverEthernetAdapter
 tick	libsponge/tcp_sender.cc	/^void TCPSender::tick(const size_t ms_since_last_tick) {$/;"	f	class:TCPSender
 tick_handle	libsponge/tcp_sender.cc	/^void Timer::tick_handle(const size_t ticks,const uint16_t window_size,std::queue<TCPSegment>& segments_out){$/;"	f	class:Timer
 time_since_last_segment_received	libsponge/tcp_connection.cc	/^size_t TCPConnection::time_since_last_segment_received() const { return _linger_time; }$/;"	f	class:TCPConnection
 timestamp_ms	libsponge/util/util.cc	/^uint64_t timestamp_ms() {$/;"	f
+to_string	libsponge/tcp_helpers/arp_message.cc	/^string ARPMessage::to_string() const {$/;"	f	class:ARPMessage
+to_string	libsponge/tcp_helpers/ethernet_header.cc	/^string EthernetHeader::to_string() const {$/;"	f	class:EthernetHeader
+to_string	libsponge/tcp_helpers/ethernet_header.cc	/^string to_string(const EthernetAddress address) {$/;"	f
 to_string	libsponge/tcp_helpers/ipv4_header.cc	/^std::string IPv4Header::to_string() const {$/;"	f	class:IPv4Header
 to_string	libsponge/tcp_helpers/tcp_header.cc	/^string TCPHeader::to_string() const {$/;"	f	class:TCPHeader
 to_string	libsponge/util/address.cc	/^string Address::to_string() const {$/;"	f	class:Address
@@ -1585,7 +1667,9 @@ to_string	tests/tcp_expectation.hh	/^    std::string to_string() const { return 
 to_string	tests/tcp_expectation.hh	/^    std::string to_string() const { return "Expectation: " + description(); }$/;"	f	struct:TCPExpectation
 to_string	tests/tcp_expectation_forward.hh	/^    virtual std::string to_string() const { return "TestStep"; }$/;"	f	struct:TCPTestStep
 tos	libsponge/tcp_helpers/ipv4_header.hh	/^    uint8_t tos = 0;            \/\/!< type of service$/;"	m	struct:IPv4Header
+try_clean_closed	libsponge/tcp_connection.cc	/^void TCPConnection::try_clean_closed(){$/;"	f	class:TCPConnection
 ttl	libsponge/tcp_helpers/ipv4_header.hh	/^    uint8_t ttl = DEFAULT_TTL;  \/\/!< time to live field$/;"	m	struct:IPv4Header
+type	libsponge/tcp_helpers/ethernet_header.hh	/^    uint16_t type;$/;"	m	struct:EthernetHeader
 u16	libsponge/util/parser.cc	/^uint16_t NetParser::u16() { return _parse_int<uint16_t>(); }$/;"	f	class:NetParser
 u16	libsponge/util/parser.cc	/^void NetUnparser::u16(string &s, const uint16_t val) { return _unparse_int<uint16_t>(s, val); }$/;"	f	class:NetUnparser
 u32	libsponge/util/parser.cc	/^uint32_t NetParser::u32() { return _parse_int<uint32_t>(); }$/;"	f	class:NetParser
@@ -1599,6 +1683,7 @@ unix_error	libsponge/util/util.hh	/^    explicit unix_error(const std::string &a
 unix_error	libsponge/util/util.hh	/^class unix_error : public tagged_error {$/;"	c
 unwrap	libsponge/wrapping_integers.cc	/^uint64_t unwrap(WrappingInt32 n, WrappingInt32 isn, uint64_t checkpoint) {$/;"	f
 unwrap_tcp_in_ip	libsponge/tcp_helpers/tcp_over_ip.cc	/^optional<TCPSegment> TCPOverIPv4Adapter::unwrap_tcp_in_ip(const InternetDatagram &ip_dgram) {$/;"	f	class:TCPOverIPv4Adapter
+update_queue	libsponge/tcp_connection.cc	/^void TCPConnection::update_queue(){$/;"	f	class:TCPConnection
 uptr	libsponge/tcp_helpers/tcp_header.hh	/^    uint16_t uptr = 0;          \/\/!< urgent pointer$/;"	m	struct:TCPHeader
 urg	libsponge/tcp_helpers/tcp_header.hh	/^    bool urg = false;           \/\/!< urgent flag$/;"	m	struct:TCPHeader
 val1	doctests/parser_example.cc	/^const uint32_t val1 = 0xdeadbeef;$/;"	v
@@ -1676,6 +1761,7 @@ write	libsponge/byte_stream.cc	/^size_t ByteStream::write(const string &data) {$
 write	libsponge/tcp_connection.cc	/^size_t TCPConnection::write(const string &data) {$/;"	f	class:TCPConnection
 write	libsponge/tcp_helpers/fd_adapter.cc	/^void TCPOverUDPSocketAdapter::write(TCPSegment &seg) {$/;"	f	class:TCPOverUDPSocketAdapter
 write	libsponge/tcp_helpers/lossy_fd_adapter.hh	/^    void write(TCPSegment &seg) {$/;"	f	class:LossyFdAdapter
+write	libsponge/tcp_helpers/tuntap_adapter.cc	/^void TCPOverIPv4OverEthernetAdapter::write(TCPSegment &seg) {$/;"	f	class:TCPOverIPv4OverEthernetAdapter
 write	libsponge/tcp_helpers/tuntap_adapter.hh	/^    void write(TCPSegment &seg) { _tun.write(wrap_tcp_in_ip(seg).serialize()); }$/;"	f	class:TCPOverIPv4OverTunFdAdapter
 write	libsponge/util/file_descriptor.cc	/^size_t FileDescriptor::write(BufferViewList buffer, const bool write_all) {$/;"	f	class:FileDescriptor
 write	libsponge/util/file_descriptor.hh	/^    size_t write(const char *str, const bool write_all = true) { return write(BufferViewList(str), write_all); }$/;"	f	class:FileDescriptor

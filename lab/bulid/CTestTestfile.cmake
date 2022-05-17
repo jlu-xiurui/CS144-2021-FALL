@@ -66,7 +66,7 @@ add_test(t_byte_stream_many_writes "/home/xiurui/sponge/bulid/tests/byte_stream_
 set_tests_properties(t_byte_stream_many_writes PROPERTIES  _BACKTRACE_TRIPLES "/home/xiurui/sponge/etc/tests.cmake;38;add_test;/home/xiurui/sponge/etc/tests.cmake;0;;/home/xiurui/sponge/CMakeLists.txt;27;include;/home/xiurui/sponge/CMakeLists.txt;0;")
 add_test(t_webget "/home/xiurui/sponge/tests/webget_t.sh")
 set_tests_properties(t_webget PROPERTIES  _BACKTRACE_TRIPLES "/home/xiurui/sponge/etc/tests.cmake;40;add_test;/home/xiurui/sponge/etc/tests.cmake;0;;/home/xiurui/sponge/CMakeLists.txt;27;include;/home/xiurui/sponge/CMakeLists.txt;0;")
-add_test(arp_network_interface "net_interface")
+add_test(arp_network_interface "/home/xiurui/sponge/bulid/tests/net_interface")
 set_tests_properties(arp_network_interface PROPERTIES  _BACKTRACE_TRIPLES "/home/xiurui/sponge/etc/tests.cmake;42;add_test;/home/xiurui/sponge/etc/tests.cmake;0;;/home/xiurui/sponge/CMakeLists.txt;27;include;/home/xiurui/sponge/CMakeLists.txt;0;")
 add_test(router_test "network_simulator")
 set_tests_properties(router_test PROPERTIES  _BACKTRACE_TRIPLES "/home/xiurui/sponge/etc/tests.cmake;44;add_test;/home/xiurui/sponge/etc/tests.cmake;0;;/home/xiurui/sponge/CMakeLists.txt;27;include;/home/xiurui/sponge/CMakeLists.txt;0;")

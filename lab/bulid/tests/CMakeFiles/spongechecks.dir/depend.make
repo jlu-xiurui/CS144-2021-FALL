@@ -6,6 +6,29 @@ tests/CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.o: ../libsponge/ut
 tests/CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.o: ../tests/byte_stream_test_harness.cc
 tests/CMakeFiles/spongechecks.dir/byte_stream_test_harness.cc.o: ../tests/byte_stream_test_harness.hh
 
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/network_interface.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/arp_message.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/ethernet_frame.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/ethernet_header.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/fd_adapter.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/ipv4_datagram.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/ipv4_header.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/lossy_fd_adapter.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/tcp_config.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/tcp_header.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/tcp_over_ip.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/tcp_helpers/tcp_segment.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/util/address.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/util/buffer.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/util/file_descriptor.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/util/parser.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/util/socket.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/util/tun.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/util/util.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../libsponge/wrapping_integers.hh
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../tests/network_interface_test_harness.cc
+tests/CMakeFiles/spongechecks.dir/network_interface_test_harness.cc.o: ../tests/network_interface_test_harness.hh
+
 tests/CMakeFiles/spongechecks.dir/send_equivalence_checker.cc.o: ../libsponge/tcp_helpers/tcp_header.hh
 tests/CMakeFiles/spongechecks.dir/send_equivalence_checker.cc.o: ../libsponge/tcp_helpers/tcp_segment.hh
 tests/CMakeFiles/spongechecks.dir/send_equivalence_checker.cc.o: ../libsponge/util/buffer.hh
