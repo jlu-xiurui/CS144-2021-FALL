@@ -108,7 +108,7 @@
 
 在完成了合并操作后，将合并后的子字符串添加到 `_mp` 。值得注意的是，只能向 `_mp` 中添加小于等于当前剩余容积的子字符串（`_mp`中所有子字符串的字符数与`_output`中的字符数之和不能超过最大容量）。
 
-![lab1_figure2](C:\Users\xiurui\Desktop\计算机书单\CS144\lab1_figure2.png)
+![lab1_figure2](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/figure/lab1_figure2.png)
 
 ```c++
  75     if(_eof && _nidx >= _eidx)
