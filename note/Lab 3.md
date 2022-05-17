@@ -12,7 +12,7 @@
 2. 跟踪传输至对端且并未被对端确认的所有TCP段（称其为`Outstanding segment`），如果持续一定的时间内未有任何TCP段被对端确认，则将最早发送至对端的TCP段重新传输，并跟踪重传次数；
 3. 当接收器接收到对端的 `ACK` 信息时，将所有字节完全被对端确认的 `Outstanding segment` 解除跟踪。如存在被完全确认的 `Outstanding segment` ，则刷新重传时间及重传次数。 并且，更新本地的输出窗口大小。
 
-```
+```c++
  48 class TCPSender {
  49   private:
  50     //! our initial sequence number, the number for our SYN.
@@ -70,7 +70,7 @@
 
 在这里，构建了 `Timer` 计时器类以处理超时重传相关的所有任务，其私有成员如下：
 
-```
+```c++
  18 class Timer{
  19     private:
  20         bool _running{false};
@@ -106,7 +106,7 @@
 
 `Timer::tick_handle` 用于完成 `TCPSender` 调用 `tick` 时的计时器任务：
 
-```
+```c++
  16 void Timer::tick_handle(const size_t ticks,const uint16_t window_size,std::queue<TCPSegment>& seg    ments_out){
  17     if(_running){
  18         if(_RTO <= ticks){
@@ -127,7 +127,7 @@
 
 `Timer::ack_handle` 用于完成 `TCPSender` 调用 `ack_received`  时的计时器任务：
 
-```
+```c++
  31 uint64_t Timer::ack_handle(const uint64_t ackno){
  32     uint64_t ret = 0;
  33     _consecutive_retransmissions = 0;
@@ -150,7 +150,7 @@ TCP段是按**序列号越小越早传入**规律传入 `_outstandings` 的，�
 
 ### TCPSender主要功能接口
 
-```
+```c++
  58 void TCPSender::fill_window() {
  59     uint64_t window_size = _window_size > 0 ? static_cast<uint64_t>(_window_size) : 1ul;
  60     uint64_t end_seqno = window_size + _ackno;
@@ -189,7 +189,7 @@ TCP段是按**序列号越小越早传入**规律传入 `_outstandings` 的，�
 
 **76 - 79行**：最后，更新 ` _bytes_in_flight` 和 `_next_seqno`，并将该TCP段输入至 `_segments` 和计时器（此时该段为`Outstanding segment`）。
 
-```
+```c++
  85 void TCPSender::ack_received(const WrappingInt32 ackno, const uint16_t window_size) {
  86     uint64_t tmp = unwrap(ackno,_isn,_next_seqno);
  87     if(tmp <= _next_seqno){
@@ -202,7 +202,7 @@ TCP段是按**序列号越小越早传入**规律传入 `_outstandings` 的，�
 
 `TCPSender::ack_received` 通知了对端TCP接收端的`ackno`及窗口大小的更新。首先，将 `ackno` 解压至64位类型，如`_next_seqno` 小于 `ackno` 时（对端接受到了本地尚未发送的字节），则表示接受 `ACK` 异常，直接返回。如无异常情况，则调用计时器的 `ack_handle`，并更新 `_bytes_in_flight` 。
 
-```
+```c++
  95 void TCPSender::tick(const size_t ms_since_last_tick) {
  96     _timer.tick_handle(ms_since_last_tick,_window_size,_segments_out);
  97 }
@@ -210,7 +210,7 @@ TCP段是按**序列号越小越早传入**规律传入 `_outstandings` 的，�
 
 `TCPSender::tick` 用于表现时间流逝，在这里利用计时器的 `tick_handle` 完成全部工作。
 
-```
+```c++
 101 void TCPSender::send_empty_segment() {
 102     TCPSegment seg;
 103     seg.header().seqno = wrap(_next_seqno,_isn);

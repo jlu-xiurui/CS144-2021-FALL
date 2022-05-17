@@ -14,7 +14,7 @@ ARP的实际功能即为建立<协议，协议地址>到MAC地址的映射关系
 
 当发送链路层数据帧时，其传输目标的<协议，协议地址>是已知的（在本实验中协议固定为IPV4）。为了使得数据帧可以在链路层中进行传输，需要利用ARP以将<协议，协议地址>转化为MAC以填充数据帧，用于发送数据帧的函数如下：
 
-```
+```c++
  32 void NetworkInterface::send_datagram(const InternetDatagram &dgram, const Address &next_hop) {
  33     // convert IP address of next hop to raw 32-bit representation (used in ARP header)
  34     const uint32_t next_hop_ip = next_hop.ipv4_numeric();
@@ -48,7 +48,7 @@ ARP的实际功能即为建立<协议，协议地址>到MAC地址的映射关系
 
 在这里，`dgram` 为网络层向下传递的数据报、`next_hop` 为数据帧所需传输的目的IP地址。在这里，我们需要检查本地地址解析模块中是否存储了有关 `next_hop` 的实际映射，本实验中使用了哈希表 `unordered_map` 进行相关映射的保存及查询：
 
-```
+```c++
  44     std::unordered_map<uint32_t, std::pair<size_t,EthernetAddress>> _addr_mp{};
 ```
 
@@ -60,7 +60,7 @@ ARP的实际功能即为建立<协议，协议地址>到MAC地址的映射关系
 
 最后，在 `_addr_mp` 中建立有关目的IP地址的条目（剩余寿命为5000ms），以防止在短时间内多次发送ARP请求。将所需发送的IP数据报 `dgram` 以目的IP地址为索引保存在 `_data_mp` 中，以便在接收到ARP回复时发送该数据报：
 
-```
+```c++
  46     std::unordered_map<uint32_t,InternetDatagram> _data_mp{};
 ```
 
@@ -68,7 +68,7 @@ ARP的实际功能即为建立<协议，协议地址>到MAC地址的映射关系
 
 当接收链路层数据帧时，调用 `NetworkInterface::recv_frame` 完成实际的接收工作：
 
-```
+```c++
  63 optional<InternetDatagram> NetworkInterface::recv_frame(const EthernetFrame &frame) {
  64     if(frame.header().type == EthernetHeader::TYPE_IPv4 && frame.header().dst == _ethernet_address){
  65         InternetDatagram ret;
@@ -116,7 +116,7 @@ ARP的实际功能即为建立<协议，协议地址>到MAC地址的映射关系
 
 ### 时间流逝
 
-```
+```c++
 102 void NetworkInterface::tick(const size_t ms_since_last_tick) {
 103     for(auto& [key, val] : _addr_mp){
 104         size_t release_time = val.first;

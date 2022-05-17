@@ -14,7 +14,7 @@
 
 在这里第一部分的内容过于简单，在这里不进行介绍。在第二部分中，我们需要实现 `webget` 程序中的 `get_URL` 函数：
 
-```
+```c++
   9 void get_URL(const string &host, const string &path) {
  10     // Your code here.
  11 
@@ -58,7 +58,7 @@
 
 在 ` /libsponge/byte_stream.hh` 中，为该类添加新的私有成员。在这里将 `ByteStream` 以循环数组的方式进行实现， `_head` 指向当前FIFO中首个元素的索引、 `_tail` 指向当前FIFO中下一个插入位置的索引、`_sz` 显示了当前FIFO存储的字节数、`_read_bytes` 和 `_write_bytes` 分别对应从FIFO中输入和删除的字节数、`_end_input` 判断输入端是否调用了 `end_input()` 以提示输入完毕。
 
-```
+```c++
  11 class ByteStream {
  12   private:
  13     // Your code here -- add private members as necessary.
@@ -83,7 +83,7 @@
 
 在 `/libsponge/byte_stream.cc` 中，需要实现该类的各接口函数：
 
-```
+```c++
  76 bool ByteStream::input_ended() const { return _end_input; }
  77 
  78 size_t ByteStream::buffer_size() const { return _sz; }
@@ -101,7 +101,7 @@
 
 上述函数返回了当前 `ByteStream` 的状态信息，值得注意的是 `eof()` 函数仅当 `_sz` 为0时才返回真。
 
-```
+```c++
  18 size_t ByteStream::write(const string &data) {
  19     size_t idx = 0;
  20     size_t data_sz = data.size();
@@ -117,7 +117,7 @@
 
 `ByteStream::write` 向FIFO中写入字节，直到 `data` 中的字节被写入完毕或FIFO被充满，在这里利用 `(_tail == _head && _sz == _capacity)`  判断FIFO是否为满。在写入过程中更新 `_tail` 和 `_sz`，并使 `_write_bytes` 增加写入字节数，最后返回写入字节数。
 
-```
+```c++
  30 //! \param[in] len bytes will be copied from the output side of the buffer
  31 string ByteStream::peek_output(const size_t len) const {
  32     string ret;
@@ -133,7 +133,7 @@
 
 `ByteStream::peek_output` 从FIFO中提取但不驱逐字节，提取字节的数量为 `len` 和FIFO剩余字节间的较小值。
 
-```
+```c++
  43 void ByteStream::pop_output(const size_t len) {
  44     size_t sz = min(len,_sz);
  45     _head = (_head + sz) % _capacity;
@@ -144,7 +144,7 @@
 
 `ByteStream::pop_output` 从FIFO中驱逐字节，当剩余字节小于传入参数时，将驱逐字节数置为剩余字节数。在这里不进行实际元素的清空，而仅将 `_head` 递增 `len` 即可。值得注意的是，在该函数中需要递增 `_read_bytes`。
 
-```
+```c++
  52 std::string ByteStream::read(const size_t len) {
  53     string ret; 
  54     size_t sz = min(len,_sz);

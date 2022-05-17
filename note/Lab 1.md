@@ -10,7 +10,7 @@
 
 下面是 `StreamReassembler` 的具体代码实现：
 
-```
+```c++
  12 class StreamReassembler {
  13   private:
  14     // Your code here -- add private members as necessary.
@@ -29,7 +29,7 @@
 
 在 `StreamReassembler::push_substring` 中，我们完成将子字符串组装的全部工作：
 
-```
+```c++
  20 void StreamReassembler::push_substring(const string &data, const size_t index, const bool eof) {
  21     if(eof){
  22         _eidx = index + data.size();
@@ -39,7 +39,7 @@
 
 **21 - 24行**：如调用参数 `eof` 为真，则该子字符串为字节流中的最后一个子字符串，将 `_eof ` 置为真，并将 `_eidx` 设置为当前子字符串索引加当前子字符串长度。
 
-```
+```c++
  25     size_t idx = index;
  26     if(idx <= _nidx){
  27         if(data.size() > _nidx - idx){
@@ -57,13 +57,13 @@
  39     }
 ```
 
-**25 - 39行**：如当前子字符串的首字符索引 `index` 小于等于 `_nidx` 且当前子字符串的末字符索引大于 `_nidx` 时，则在本次调用中会使 `_nidx`增加，在这里向 `_output` 写入 `data` 中字节流索引大于等于`_nidx` 的所有字节，并使得 `_nidx` 增加成功写入的字节数。由于，`_nidx`在本次插入操作中增加，因此暂存在 `StreamReassembler` 中的子字符串可能在本次插入后满足了其插入条件：在该子字符串前的所有字节均被写入 `_output`。
+**25 - 39行：**如当前子字符串的首字符索引 `index` 小于等于 `_nidx` 且当前子字符串的末字符索引大于 `_nidx` 时，则在本次调用中会使 `_nidx`增加，在这里向 `_output` 写入 `data` 中字节流索引大于等于`_nidx` 的所有字节，并使得 `_nidx` 增加成功写入的字节数。由于，`_nidx`在本次插入操作中增加，因此暂存在 `StreamReassembler` 中的子字符串可能在本次插入后满足了其插入条件：在该子字符串前的所有字节均被写入 `_output`。
 
 在这里，所有首字节索引小于等于 `_nidx` 的子字符串均满足了插入条件。由于 `_mp` 为基于红黑树的有序索引表，因此我们循环访问 `_mp` 的首元素（其首字节索引总是位于 `_mp` 中最小的）。如该元素满足了插入条件，则将该元素插入至 `_output` 并从 `_mp` 中删除；如当前元素不满足插入条件，则其后续元素也一定不满足插入条件，因此终结循环。值得注意的是，如当前元素的末字节索引小于等于 `_nidx` ，则该元素中的所有字节均已被写入 `_output`，因此直接将该元素从 `_mp` 中删除即可。
 
-![lab1_figure1](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/figure/lab1_figure1.png)
+![lab1_figure1](C:\Users\xiurui\Desktop\计算机书单\CS144\lab1_figure1.png)
 
-```
+```c++
  40     else{
  41         string str = data;
  42         auto inext = _mp.lower_bound(idx);
@@ -108,9 +108,9 @@
 
 在完成了合并操作后，将合并后的子字符串添加到 `_mp` 。值得注意的是，只能向 `_mp` 中添加小于等于当前剩余容积的子字符串（`_mp`中所有子字符串的字符数与`_output`中的字符数之和不能超过最大容量）。
 
-![lab1_figure2](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/figure/lab1_figure2.png)
+![lab1_figure2](C:\Users\xiurui\Desktop\计算机书单\CS144\lab1_figure2.png)
 
-```
+```c++
  75     if(_eof && _nidx >= _eidx)
  76         _output.end_input();
  77 }

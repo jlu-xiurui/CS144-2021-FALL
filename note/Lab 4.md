@@ -6,7 +6,7 @@
 
 链接器将 `TCPSender` 传输器和 `TCPReceiver` 接收器搭接起来，其基本构架如下：
 
-![lab4_figure1](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/figure/lab4_figure1.png)
+![lab4_figure1](C:\Users\xiurui\Desktop\计算机书单\CS144\lab4_figure1.png)
 
 链接器通过调用 `segment_received` 从网络中接受TCP段，并将其内容解析并分发至传输器和接收器。并且，链接器根据传输器和接收器的状态参数，主动或被动地构建TCP段并发送至网络。虽然总体构架看起来很简单，但其实际所需满足的细节有许多。在这里，从链接器关闭、接收TCP段、传输TCP段、时间流逝四个链接器行为进行讲解。
 
@@ -21,7 +21,7 @@
 
   在这里，将发送 `RST` 段的工作包装到`send_rst()`函数中：
 
-  ```
+  ```c++
    14 void TCPConnection::send_rst(){
    15     while(!_segments_out.empty())
    16         _segments_out.pop();
@@ -50,7 +50,7 @@
 
   当以上四个条件在任意情况下被满足时，则将本地链接器关闭（ `active()` 返回假）。在这里，设置了  `try_clean_closed()` 函数对上述四个条件进行判断，如四个条件均被满足则将本地链接器关闭：
 
-  ```
+  ```c++
    26 void TCPConnection::try_clean_closed(){
    27     if(_receiver.stream_out().eof() && _sender.stream_in().eof() &&  _sender.bytes_in_flight() ==     0){
    28         if(_linger_after_streams_finish == false || _linger_time >= _cfg.rt_timeout * 10){
@@ -64,7 +64,7 @@
 
 `TCPConnect`链接器通过 `TCPConnection::segment_received` 进行TCP段的实际接收：
 
-```
+```c++
  53 void TCPConnection::segment_received(const TCPSegment &seg) {
  54     _linger_time = 0;
  55     if(seg.header().rst){
@@ -77,7 +77,7 @@
 
 **53 - 60行**：当接收到TCP段时，将 `_linger_time` 置为0，其代表了自上次接收到对端TCP段过去的毫秒数。如接收的TCP段带有`RST`，则进行脏关闭，将输入输出流置为error状态，并将 `_active` 置为假。
 
-```
+```c++
  61     _receiver.segment_received(seg);
  62     if(seg.header().ack){
  63         _sender.ack_received(seg.header().ackno,seg.header().win);
@@ -90,7 +90,7 @@
 
 **61 - 68行**：将收到的TCP段送至本地接收器，如果TCP段的 `ACK` 被设置，则该TCP段带有对端的确认信息，将该确认信息送至本地传输器。值得注意的是，来自对端的确认消息可能通知了其接收窗口的更新，本地传输器需要在对端窗口更新时及时填充窗口，在这里调用`_sender.fill_window()` 使得本地传输器尝试填充窗口，并调用 `update_queue` ：
 
-```
+```c++
  33 void TCPConnection::update_queue(){
  34     while(!_sender.segments_out().empty()){
  35         TCPSegment seg = _sender.segments_out().front();
@@ -107,7 +107,7 @@
 
 `update_queue` 将将本地传输器的传输队列中的TCP段移至本地链接器的传输队列，并在本地接收器开始工作时（`_receiver.ackno().has_value()`）为TCP段添加`ACK`、`ackno`和`win`信息。需要注意的是，仅在本地链接器已经和对端建立链接时（`SYN` 已发送，即`_sender.next_seqno_absolute() != 0`），才在接收 `ACK` 段时尝试填充窗口，否则会导致本地链接器错误地与对端建立链接。
 
-```
+```c++
  69     if(_receiver.stream_out().eof() && !_sender.stream_in().eof())
  70         _linger_after_streams_finish = false;
  71     try_clean_closed();
@@ -115,7 +115,7 @@
 
 **69 - 71行**：当本次接收为对端发送的主动关闭时，需要将 `_linger_after_streams_finish` 置为假，表示本地链接器被被动关闭，无需等待对端。在这里，接收TCP端可能会导致本地链接器的状态变化，因此需要调用 `try_clean_closed()` 测试当前链接器是否满足关闭条件。
 
-```
+```c++
  72     if(seg.length_in_sequence_space() != 0 && _receiver.ackno().has_value()){
  73         if(_sender.next_seqno_absolute() == 0 && seg.header().syn == 1)
  74             _sender.fill_window();
@@ -127,7 +127,7 @@
 
 **72 - 78行**：当接收到的TCP段带有信息（即长度不为零），且本地接收器开始工作时，则需要向对端发送 `ACK` 信息。在这里，如果接收到的为 `SYN` 段，且本地链接器尚未建立链接，则通过调用 `_sender.fill_window()` 与对端建立连接（`_sender` 的首次填充窗口会导致一个 `SYN` 段被产生）；如已建立连接，则仅需调用 `_sender.send_empty_segment()` 生成一个空段。然后调用 `update_queue()` 完成实际的 `ACK` 信息填充和TCP段转移。
 
-```
+```c++
  79     if(seg.length_in_sequence_space() == 0 && _receiver.ackno().has_value() && seg.header().seqno    == _receiver.ackno().value() - 1){
  80         _sender.send_empty_segment();
  81         update_queue();
@@ -140,7 +140,7 @@
 
 在这里，链接器传输TCP段的行为可以分为主动传输和被动传输，其中被动传输在链接器接收TCP段或时间流逝时发生。在本段将介绍TCP段的主动传输，即主动建立链接、用户写入数据流和主动关闭：
 
-```
+```c++
 112 void TCPConnection::connect() {
 113     _sender.fill_window();
 114     update_queue();
@@ -149,7 +149,7 @@
 
 `TCPConnection::connect()` 执行了本地链接器的主动链接，其利用 `_sender.fill_window()` 生成一个`SYN`段，并将其移至链接器输出队列。
 
-```
+```c++
  87 size_t TCPConnection::write(const string &data) {
  88     size_t ret = _sender.stream_in().write(data);
  89     _sender.fill_window();
@@ -160,7 +160,7 @@
 
 `TCPConnection::write` 执行了用户写入数据流。当用户写入数据时，本地传输器需要尝试填充窗口，并将填充的TCP段移至链接器输出队列。
 
-```
+```c++
 106 void TCPConnection::end_input_stream() {
 107     _sender.stream_in().end_input();
 108     _sender.fill_window();
@@ -172,7 +172,7 @@
 
 ### 时间流逝
 
-```
+```c++
  95 void TCPConnection::tick(const size_t ms_since_last_tick) {
  96     _sender.tick(ms_since_last_tick);
  97     update_queue();
@@ -191,7 +191,7 @@
 
 至此，有关链接器的所有行为均被介绍完毕。下面是一些用于导出链接器状态的简单接口：
 
-```
+```c++
  45 size_t TCPConnection::remaining_outbound_capacity() const { return _sender.stream_in().remaining_    capacity(); }
  46 
  47 size_t TCPConnection::bytes_in_flight() const { return _sender.bytes_in_flight(); }
