@@ -26,3 +26,7 @@ CS144 2021 FALL的实验源码及笔记，实验的官网为[cs144](https://cs14
 ### 5. Lab4: the summit (TCP in full)  [Lab4_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%204.md) 
 
 本实验的任务为将之前所有实验的工作进行融合，构建用于TCP链接的基本构件`TCPConnect`链接器。
+
+### 6. Lab5: down the stack (the network interface)  [Lab5_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%205.md) 
+
+在本实验中，需要完成介于网络层与数据链路层之间的ARP（地址解析协议），以便数据报可以在以太网等链路层进行传输。
