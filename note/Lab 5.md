@@ -6,7 +6,7 @@
 
 ARP的实际功能即为建立<协议，协议地址>到MAC地址的映射关系，ARP数据报的具体结构如下：
 
-![lab5_figure1](C:\Users\xiurui\Desktop\计算机书单\CS144\lab5_figure1.png)
+![lab5_figure1](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/figure/lab5_figure1.png)
 
 其中的条目包括：硬件和协议类型及其地址长度、ARP数据报的操作类型（请求或回复）以及发送方和接收方的协议地址和硬件地址。
 
