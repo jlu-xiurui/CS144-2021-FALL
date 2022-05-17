@@ -61,7 +61,7 @@
 
 在这里，所有首字节索引小于等于 `_nidx` 的子字符串均满足了插入条件。由于 `_mp` 为基于红黑树的有序索引表，因此我们循环访问 `_mp` 的首元素（其首字节索引总是位于 `_mp` 中最小的）。如该元素满足了插入条件，则将该元素插入至 `_output` 并从 `_mp` 中删除；如当前元素不满足插入条件，则其后续元素也一定不满足插入条件，因此终结循环。值得注意的是，如当前元素的末字节索引小于等于 `_nidx` ，则该元素中的所有字节均已被写入 `_output`，因此直接将该元素从 `_mp` 中删除即可。
 
-![lab1_figure1](C:\Users\xiurui\Desktop\计算机书单\CS144\lab1_figure1.png)
+![lab1_figure1](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/figure/lab1_figure1.png)
 
 ```c++
  40     else{
