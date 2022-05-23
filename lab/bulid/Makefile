@@ -330,6 +330,19 @@ tcp_udp/fast:
 .PHONY : tcp_udp/fast
 
 #=============================================================================
+# Target rules for targets named network_simulator
+
+# Build rule for target.
+network_simulator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 network_simulator
+.PHONY : network_simulator
+
+# fast build rule for target.
+network_simulator/fast:
+	$(MAKE) -f apps/CMakeFiles/network_simulator.dir/build.make apps/CMakeFiles/network_simulator.dir/build
+.PHONY : network_simulator/fast
+
+#=============================================================================
 # Target rules for targets named tcp_ipv4
 
 # Build rule for target.
@@ -1056,6 +1069,7 @@ help:
 	@echo "... webget"
 	@echo "... tcp_ip_ethernet"
 	@echo "... tcp_udp"
+	@echo "... network_simulator"
 	@echo "... tcp_ipv4"
 	@echo "... tcp_native"
 	@echo "... tun"

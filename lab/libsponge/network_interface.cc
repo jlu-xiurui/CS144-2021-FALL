@@ -77,6 +77,7 @@ optional<InternetDatagram> NetworkInterface::recv_frame(const EthernetFrame &fra
                 ef.header().src = _ethernet_address;
                 ef.header().dst = am.sender_ethernet_address;
                 ef.payload() = _data_mp[am.sender_ip_address].serialize();
+                _data_mp.erase(am.sender_ip_address);
                 _frames_out.push(ef);
             }
             if(am.opcode == ARPMessage::OPCODE_REQUEST && am.target_ip_address == _ip_address.ipv4_numeric()){

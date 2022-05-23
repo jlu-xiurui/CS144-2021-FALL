@@ -182,6 +182,21 @@ tcp_udp/fast:
 .PHONY : tcp_udp/fast
 
 # Convenience name for target.
+apps/CMakeFiles/network_simulator.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/network_simulator.dir/rule
+.PHONY : apps/CMakeFiles/network_simulator.dir/rule
+
+# Convenience name for target.
+network_simulator: apps/CMakeFiles/network_simulator.dir/rule
+
+.PHONY : network_simulator
+
+# fast build rule for target.
+network_simulator/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/network_simulator.dir/build.make apps/CMakeFiles/network_simulator.dir/build
+.PHONY : network_simulator/fast
+
+# Convenience name for target.
 apps/CMakeFiles/tcp_ipv4.dir/rule:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_ipv4.dir/rule
 .PHONY : apps/CMakeFiles/tcp_ipv4.dir/rule
@@ -282,6 +297,33 @@ bidirectional_stream_copy.s: bidirectional_stream_copy.cc.s
 bidirectional_stream_copy.cc.s:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/stream_copy.dir/build.make apps/CMakeFiles/stream_copy.dir/bidirectional_stream_copy.cc.s
 .PHONY : bidirectional_stream_copy.cc.s
+
+network_simulator.o: network_simulator.cc.o
+
+.PHONY : network_simulator.o
+
+# target to build an object file
+network_simulator.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/network_simulator.dir/build.make apps/CMakeFiles/network_simulator.dir/network_simulator.cc.o
+.PHONY : network_simulator.cc.o
+
+network_simulator.i: network_simulator.cc.i
+
+.PHONY : network_simulator.i
+
+# target to preprocess a source file
+network_simulator.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/network_simulator.dir/build.make apps/CMakeFiles/network_simulator.dir/network_simulator.cc.i
+.PHONY : network_simulator.cc.i
+
+network_simulator.s: network_simulator.cc.s
+
+.PHONY : network_simulator.s
+
+# target to generate assembly for a file
+network_simulator.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/network_simulator.dir/build.make apps/CMakeFiles/network_simulator.dir/network_simulator.cc.s
+.PHONY : network_simulator.cc.s
 
 tcp_benchmark.o: tcp_benchmark.cc.o
 
@@ -512,6 +554,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... tcp_ip_ethernet"
 	@echo "... tcp_udp"
+	@echo "... network_simulator"
 	@echo "... tcp_ipv4"
 	@echo "... tcp_native"
 	@echo "... tun"
@@ -520,6 +563,9 @@ help:
 	@echo "... bidirectional_stream_copy.o"
 	@echo "... bidirectional_stream_copy.i"
 	@echo "... bidirectional_stream_copy.s"
+	@echo "... network_simulator.o"
+	@echo "... network_simulator.i"
+	@echo "... network_simulator.s"
 	@echo "... tcp_benchmark.o"
 	@echo "... tcp_benchmark.i"
 	@echo "... tcp_benchmark.s"

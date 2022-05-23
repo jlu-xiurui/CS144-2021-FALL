@@ -11,6 +11,11 @@
 },
 {
   "directory": "/home/xiurui/sponge/bulid/libsponge",
+  "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/sponge.dir/router.cc.o -c /home/xiurui/sponge/libsponge/router.cc",
+  "file": "/home/xiurui/sponge/libsponge/router.cc"
+},
+{
+  "directory": "/home/xiurui/sponge/bulid/libsponge",
   "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/sponge.dir/stream_reassembler.cc.o -c /home/xiurui/sponge/libsponge/stream_reassembler.cc",
   "file": "/home/xiurui/sponge/libsponge/stream_reassembler.cc"
 },
@@ -153,6 +158,11 @@
   "directory": "/home/xiurui/sponge/bulid/apps",
   "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/tcp_udp.dir/tcp_udp.cc.o -c /home/xiurui/sponge/apps/tcp_udp.cc",
   "file": "/home/xiurui/sponge/apps/tcp_udp.cc"
+},
+{
+  "directory": "/home/xiurui/sponge/bulid/apps",
+  "command": "/usr/bin/c++   -I/home/xiurui/sponge/libsponge/util -I/home/xiurui/sponge/libsponge/tcp_helpers -I/home/xiurui/sponge/libsponge   -std=c++17 -g -pedantic -pedantic-errors -Werror -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-qual -Wformat=2 -Weffc++ -Wold-style-cast -O3 -DNDEBUG   -std=gnu++17 -o CMakeFiles/network_simulator.dir/network_simulator.cc.o -c /home/xiurui/sponge/apps/network_simulator.cc",
+  "file": "/home/xiurui/sponge/apps/network_simulator.cc"
 },
 {
   "directory": "/home/xiurui/sponge/bulid/apps",

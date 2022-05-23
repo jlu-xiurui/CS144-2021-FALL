@@ -190,6 +190,33 @@ network_interface.cc.s:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/network_interface.cc.s
 .PHONY : network_interface.cc.s
 
+router.o: router.cc.o
+
+.PHONY : router.o
+
+# target to build an object file
+router.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/router.cc.o
+.PHONY : router.cc.o
+
+router.i: router.cc.i
+
+.PHONY : router.i
+
+# target to preprocess a source file
+router.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/router.cc.i
+.PHONY : router.cc.i
+
+router.s: router.cc.s
+
+.PHONY : router.s
+
+# target to generate assembly for a file
+router.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f libsponge/CMakeFiles/sponge.dir/build.make libsponge/CMakeFiles/sponge.dir/router.cc.s
+.PHONY : router.cc.s
+
 stream_reassembler.o: stream_reassembler.cc.o
 
 .PHONY : stream_reassembler.o
@@ -881,6 +908,9 @@ help:
 	@echo "... network_interface.o"
 	@echo "... network_interface.i"
 	@echo "... network_interface.s"
+	@echo "... router.o"
+	@echo "... router.i"
+	@echo "... router.s"
 	@echo "... stream_reassembler.o"
 	@echo "... stream_reassembler.i"
 	@echo "... stream_reassembler.s"

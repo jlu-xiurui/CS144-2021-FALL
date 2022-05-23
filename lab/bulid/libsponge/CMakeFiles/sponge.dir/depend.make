@@ -26,6 +26,28 @@ libsponge/CMakeFiles/sponge.dir/network_interface.cc.o: ../libsponge/wrapping_in
 libsponge/CMakeFiles/sponge.dir/network_interface.cc.o: ../libsponge/network_interface.cc
 libsponge/CMakeFiles/sponge.dir/network_interface.cc.o: ../libsponge/network_interface.hh
 
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/ethernet_frame.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/ethernet_header.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/fd_adapter.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/ipv4_datagram.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/ipv4_header.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/lossy_fd_adapter.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/tcp_config.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/tcp_header.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/tcp_over_ip.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/tcp_helpers/tcp_segment.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/util/address.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/util/buffer.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/util/file_descriptor.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/util/parser.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/util/socket.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/util/tun.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/util/util.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/wrapping_integers.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/network_interface.hh
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/router.cc
+libsponge/CMakeFiles/sponge.dir/router.cc.o: ../libsponge/router.hh
+
 libsponge/CMakeFiles/sponge.dir/stream_reassembler.cc.o: ../libsponge/byte_stream.hh
 libsponge/CMakeFiles/sponge.dir/stream_reassembler.cc.o: ../libsponge/stream_reassembler.cc
 libsponge/CMakeFiles/sponge.dir/stream_reassembler.cc.o: ../libsponge/stream_reassembler.hh

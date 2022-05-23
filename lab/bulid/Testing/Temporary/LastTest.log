@@ -1,51 +1,126 @@
-Start testing: May 17 16:02 CST
+Start testing: May 23 23:13 CST
 ----------------------------------------------------------
-31/169 Testing: t_webget
-31/169 Test: t_webget
-Command: "/home/xiurui/sponge/tests/webget_t.sh"
-Directory: /home/xiurui/sponge/bulid
-"t_webget" start time: May 17 16:02 CST
-Output:
-----------------------------------------------------------
-DEBUG: Network interface has Ethernet address d6:da:07:27:94:b2 and IP address 169.254.10.9
-DEBUG: Connecting to 104.196.238.229:80...
-Successfully connected to 104.196.238.229:80.
-DEBUG: Inbound stream from 104.196.238.229:80 finished cleanly.
-DEBUG: Waiting for clean shutdown... HTTP/1.1 200 OK
-Content-type: text/plain
-
-7SmXqWkrLKzVBCEalbSPqBcvs11Pw263K7x4Wv3JckI
-DEBUG: Outbound stream to 104.196.238.229:80 finished (1 byte still in flight).
-DEBUG: Outbound stream to 104.196.238.229:80 has been fully acknowledged.
-DEBUG: TCP connection finished cleanly.
-done.
-<end of output>
-Test time =   2.55 sec
-----------------------------------------------------------
-Test Passed.
-"t_webget" end time: May 17 16:02 CST
-"t_webget" time elapsed: 00:00:02
-----------------------------------------------------------
-
 32/169 Testing: arp_network_interface
 32/169 Test: arp_network_interface
 Command: "/home/xiurui/sponge/bulid/tests/net_interface"
 Directory: /home/xiurui/sponge/bulid
-"arp_network_interface" start time: May 17 16:02 CST
+"arp_network_interface" start time: May 23 23:13 CST
 Output:
 ----------------------------------------------------------
-DEBUG: Network interface has Ethernet address 5e:2e:a5:4c:ae:d7 and IP address 4.3.2.1
-DEBUG: Network interface has Ethernet address 62:d2:34:90:f8:c4 and IP address 5.5.5.5
-DEBUG: Network interface has Ethernet address 36:2e:53:03:ca:3e and IP address 5.5.5.5
-DEBUG: Network interface has Ethernet address 5e:0c:af:02:f4:84 and IP address 1.2.3.4
-DEBUG: Network interface has Ethernet address 8e:70:b6:2d:9e:47 and IP address 4.3.2.1
-DEBUG: Network interface has Ethernet address 9a:a0:29:c2:7b:0b and IP address 10.0.0.1
+DEBUG: Network interface has Ethernet address a2:be:fd:ef:fb:81 and IP address 4.3.2.1
+DEBUG: Network interface has Ethernet address 16:2b:ab:c9:a7:0f and IP address 5.5.5.5
+DEBUG: Network interface has Ethernet address aa:9a:2e:ee:b6:59 and IP address 5.5.5.5
+DEBUG: Network interface has Ethernet address 32:db:a4:6e:6c:05 and IP address 1.2.3.4
+DEBUG: Network interface has Ethernet address 9e:a7:1a:c4:9f:b4 and IP address 4.3.2.1
+DEBUG: Network interface has Ethernet address 7a:66:d2:c7:a5:cd and IP address 10.0.0.1
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"arp_network_interface" end time: May 23 23:13 CST
+"arp_network_interface" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/169 Testing: router_test
+33/169 Test: router_test
+Command: "/home/xiurui/sponge/bulid/apps/network_simulator"
+Directory: /home/xiurui/sponge/bulid
+"router_test" start time: May 23 23:13 CST
+Output:
+----------------------------------------------------------
+[32;1mConstructing network.[m
+DEBUG: Network interface has Ethernet address 02:00:00:84:bb:df and IP address 171.67.76.46
+DEBUG: Network interface has Ethernet address 02:00:00:44:6c:8e and IP address 10.0.0.1
+DEBUG: Network interface has Ethernet address 02:00:00:41:e3:3f and IP address 172.16.0.1
+DEBUG: Network interface has Ethernet address 02:00:00:ca:d1:c5 and IP address 192.168.0.1
+DEBUG: Network interface has Ethernet address 02:00:00:e7:ae:04 and IP address 198.178.229.1
+DEBUG: Network interface has Ethernet address 02:00:00:ba:66:db and IP address 143.195.0.2
+DEBUG: Network interface has Ethernet address 02:00:00:bb:0e:ce and IP address 128.30.76.255
+DEBUG: Network interface has Ethernet address d2:87:12:ab:a1:39 and IP address 10.0.0.2
+DEBUG: Network interface has Ethernet address 8a:82:a8:60:00:68 and IP address 171.67.76.1
+DEBUG: Network interface has Ethernet address 9e:b1:a9:42:2c:b3 and IP address 192.168.0.2
+DEBUG: Network interface has Ethernet address 8e:b6:a5:94:fb:c2 and IP address 143.195.0.1
+DEBUG: Network interface has Ethernet address 8e:a0:96:d8:36:10 and IP address 198.178.229.42
+DEBUG: Network interface has Ethernet address 4a:c2:3b:a6:eb:4d and IP address 198.178.229.43
+[32;1m
+
+Testing traffic between two ordinary hosts (applesauce to cherrypie)...[m
+
+Host applesauce trying to send datagram (with next hop = 10.0.0.1): IPv4, len=30, protocol=6, src=10.0.0.2, dst=192.168.0.2 payload="random payload: {1000199559}"
+Transferring frame from applesauce to router.eth0: dst=ff:ff:ff:ff:ff:ff, src=d2:87:12:ab:a1:39, type=ARP opcode=REQUEST, sender=d2:87:12:ab:a1:39/10.0.0.2, target=00:00:00:00:00:00/10.0.0.1
+Transferring frame from router.eth0 to applesauce: dst=d2:87:12:ab:a1:39, src=02:00:00:44:6c:8e, type=ARP opcode=REPLY, sender=02:00:00:44:6c:8e/10.0.0.1, target=d2:87:12:ab:a1:39/10.0.0.2
+Transferring frame from applesauce to router.eth0: dst=02:00:00:44:6c:8e, src=d2:87:12:ab:a1:39, type=IPv4 IPv4, len=30, protocol=6, src=10.0.0.2, dst=192.168.0.2 payload="random payload: {1000199559}"
+Transferring frame from router.eth2 to cherrypie: dst=ff:ff:ff:ff:ff:ff, src=02:00:00:ca:d1:c5, type=ARP opcode=REQUEST, sender=02:00:00:ca:d1:c5/192.168.0.1, target=00:00:00:00:00:00/192.168.0.2
+Transferring frame from cherrypie to router.eth2: dst=02:00:00:ca:d1:c5, src=9e:b1:a9:42:2c:b3, type=ARP opcode=REPLY, sender=9e:b1:a9:42:2c:b3/192.168.0.2, target=02:00:00:ca:d1:c5/192.168.0.1
+Transferring frame from router.eth2 to cherrypie: dst=9e:b1:a9:42:2c:b3, src=02:00:00:ca:d1:c5, type=IPv4 IPv4, len=30, protocol=6, src=10.0.0.2, dst=192.168.0.2 payload="random payload: {1000199559}"
+[32;1m
+
+Testing traffic between two ordinary hosts (cherrypie to applesauce)...[m
+
+Host cherrypie trying to send datagram (with next hop = 192.168.0.1): IPv4, len=2f, protocol=6, src=192.168.0.2, dst=10.0.0.2 payload="random payload: {115176510}"
+Transferring frame from cherrypie to router.eth2: dst=02:00:00:ca:d1:c5, src=9e:b1:a9:42:2c:b3, type=IPv4 IPv4, len=2f, protocol=6, src=192.168.0.2, dst=10.0.0.2 payload="random payload: {115176510}"
+Transferring frame from router.eth0 to applesauce: dst=d2:87:12:ab:a1:39, src=02:00:00:44:6c:8e, type=IPv4 IPv4, len=2f, protocol=6, src=192.168.0.2, dst=10.0.0.2 payload="random payload: {115176510}"
+[32;1m
+
+Success! Testing applesauce sending to the Internet.[m
+
+Host applesauce trying to send datagram (with next hop = 10.0.0.1): IPv4, len=30, protocol=6, src=10.0.0.2, dst=1.2.3.4 payload="random payload: {3592569293}"
+Transferring frame from applesauce to router.eth0: dst=02:00:00:44:6c:8e, src=d2:87:12:ab:a1:39, type=IPv4 IPv4, len=30, protocol=6, src=10.0.0.2, dst=1.2.3.4 payload="random payload: {3592569293}"
+Transferring frame from router.default to default_router: dst=ff:ff:ff:ff:ff:ff, src=02:00:00:84:bb:df, type=ARP opcode=REQUEST, sender=02:00:00:84:bb:df/171.67.76.46, target=00:00:00:00:00:00/171.67.76.1
+Transferring frame from default_router to router.default: dst=02:00:00:84:bb:df, src=8a:82:a8:60:00:68, type=ARP opcode=REPLY, sender=8a:82:a8:60:00:68/171.67.76.1, target=02:00:00:84:bb:df/171.67.76.46
+Transferring frame from router.default to default_router: dst=8a:82:a8:60:00:68, src=02:00:00:84:bb:df, type=IPv4 IPv4, len=30, protocol=6, src=10.0.0.2, dst=1.2.3.4 payload="random payload: {3592569293}"
+[32;1m
+
+Success! Testing sending to the HS network and Internet.[m
+
+Host applesauce trying to send datagram (with next hop = 10.0.0.1): IPv4, len=30, protocol=6, src=10.0.0.2, dst=143.195.131.17 payload="random payload: {3095655466}"
+Transferring frame from applesauce to router.eth0: dst=02:00:00:44:6c:8e, src=d2:87:12:ab:a1:39, type=IPv4 IPv4, len=30, protocol=6, src=10.0.0.2, dst=143.195.131.17 payload="random payload: {3095655466}"
+Transferring frame from router.hs4 to hs_router: dst=ff:ff:ff:ff:ff:ff, src=02:00:00:ba:66:db, type=ARP opcode=REQUEST, sender=02:00:00:ba:66:db/143.195.0.2, target=00:00:00:00:00:00/143.195.0.1
+Transferring frame from hs_router to router.hs4: dst=02:00:00:ba:66:db, src=8e:b6:a5:94:fb:c2, type=ARP opcode=REPLY, sender=8e:b6:a5:94:fb:c2/143.195.0.1, target=02:00:00:ba:66:db/143.195.0.2
+Transferring frame from router.hs4 to hs_router: dst=8e:b6:a5:94:fb:c2, src=02:00:00:ba:66:db, type=IPv4 IPv4, len=30, protocol=6, src=10.0.0.2, dst=143.195.131.17 payload="random payload: {3095655466}"
+Host cherrypie trying to send datagram (with next hop = 192.168.0.1): IPv4, len=30, protocol=6, src=192.168.0.2, dst=143.195.193.52 payload="random payload: {3695728696}"
+Transferring frame from cherrypie to router.eth2: dst=02:00:00:ca:d1:c5, src=9e:b1:a9:42:2c:b3, type=IPv4 IPv4, len=30, protocol=6, src=192.168.0.2, dst=143.195.193.52 payload="random payload: {3695728696}"
+Transferring frame from router.hs4 to hs_router: dst=8e:b6:a5:94:fb:c2, src=02:00:00:ba:66:db, type=IPv4 IPv4, len=30, protocol=6, src=192.168.0.2, dst=143.195.193.52 payload="random payload: {3695728696}"
+Host cherrypie trying to send datagram (with next hop = 192.168.0.1): IPv4, len=30, protocol=6, src=192.168.0.2, dst=143.195.223.255 payload="random payload: {2136086784}"
+Transferring frame from cherrypie to router.eth2: dst=02:00:00:ca:d1:c5, src=9e:b1:a9:42:2c:b3, type=IPv4 IPv4, len=30, protocol=6, src=192.168.0.2, dst=143.195.223.255 payload="random payload: {2136086784}"
+Transferring frame from router.hs4 to hs_router: dst=8e:b6:a5:94:fb:c2, src=02:00:00:ba:66:db, type=IPv4 IPv4, len=30, protocol=6, src=192.168.0.2, dst=143.195.223.255 payload="random payload: {2136086784}"
+Host cherrypie trying to send datagram (with next hop = 192.168.0.1): IPv4, len=2f, protocol=6, src=192.168.0.2, dst=143.195.224.0 payload="random payload: {218662900}"
+Transferring frame from cherrypie to router.eth2: dst=02:00:00:ca:d1:c5, src=9e:b1:a9:42:2c:b3, type=IPv4 IPv4, len=2f, protocol=6, src=192.168.0.2, dst=143.195.224.0 payload="random payload: {218662900}"
+Transferring frame from router.default to default_router: dst=8a:82:a8:60:00:68, src=02:00:00:84:bb:df, type=IPv4 IPv4, len=2f, protocol=6, src=192.168.0.2, dst=143.195.224.0 payload="random payload: {218662900}"
+[32;1m
+
+Success! Testing two hosts on the same network (dm42 to dm43)...[m
+
+Host dm42 trying to send datagram (with next hop = 198.178.229.1): IPv4, len=2f, protocol=6, src=198.178.229.42, dst=198.178.229.43 payload="random payload: {319865311}"
+Transferring frame from dm42 to router.uun3: dst=ff:ff:ff:ff:ff:ff, src=8e:a0:96:d8:36:10, type=ARP opcode=REQUEST, sender=8e:a0:96:d8:36:10/198.178.229.42, target=00:00:00:00:00:00/198.178.229.1
+Transferring frame from dm42 to dm43: dst=ff:ff:ff:ff:ff:ff, src=8e:a0:96:d8:36:10, type=ARP opcode=REQUEST, sender=8e:a0:96:d8:36:10/198.178.229.42, target=00:00:00:00:00:00/198.178.229.1
+Transferring frame from router.uun3 to dm42: dst=8e:a0:96:d8:36:10, src=02:00:00:e7:ae:04, type=ARP opcode=REPLY, sender=02:00:00:e7:ae:04/198.178.229.1, target=8e:a0:96:d8:36:10/198.178.229.42
+Transferring frame from router.uun3 to dm43: dst=8e:a0:96:d8:36:10, src=02:00:00:e7:ae:04, type=ARP opcode=REPLY, sender=02:00:00:e7:ae:04/198.178.229.1, target=8e:a0:96:d8:36:10/198.178.229.42
+Transferring frame from dm42 to router.uun3: dst=02:00:00:e7:ae:04, src=8e:a0:96:d8:36:10, type=IPv4 IPv4, len=2f, protocol=6, src=198.178.229.42, dst=198.178.229.43 payload="random payload: {319865311}"
+Transferring frame from dm42 to dm43: dst=02:00:00:e7:ae:04, src=8e:a0:96:d8:36:10, type=IPv4 IPv4, len=2f, protocol=6, src=198.178.229.42, dst=198.178.229.43 payload="random payload: {319865311}"
+Transferring frame from router.uun3 to dm42: dst=ff:ff:ff:ff:ff:ff, src=02:00:00:e7:ae:04, type=ARP opcode=REQUEST, sender=02:00:00:e7:ae:04/198.178.229.1, target=00:00:00:00:00:00/198.178.229.43
+Transferring frame from router.uun3 to dm43: dst=ff:ff:ff:ff:ff:ff, src=02:00:00:e7:ae:04, type=ARP opcode=REQUEST, sender=02:00:00:e7:ae:04/198.178.229.1, target=00:00:00:00:00:00/198.178.229.43
+Transferring frame from dm43 to router.uun3: dst=02:00:00:e7:ae:04, src=4a:c2:3b:a6:eb:4d, type=ARP opcode=REPLY, sender=4a:c2:3b:a6:eb:4d/198.178.229.43, target=02:00:00:e7:ae:04/198.178.229.1
+Transferring frame from dm43 to dm42: dst=02:00:00:e7:ae:04, src=4a:c2:3b:a6:eb:4d, type=ARP opcode=REPLY, sender=4a:c2:3b:a6:eb:4d/198.178.229.43, target=02:00:00:e7:ae:04/198.178.229.1
+Transferring frame from router.uun3 to dm42: dst=4a:c2:3b:a6:eb:4d, src=02:00:00:e7:ae:04, type=IPv4 IPv4, len=2f, protocol=6, src=198.178.229.42, dst=198.178.229.43 payload="random payload: {319865311}"
+Transferring frame from router.uun3 to dm43: dst=4a:c2:3b:a6:eb:4d, src=02:00:00:e7:ae:04, type=IPv4 IPv4, len=2f, protocol=6, src=198.178.229.42, dst=198.178.229.43 payload="random payload: {319865311}"
+[32;1m
+
+Success! Testing TTL expiration...[m
+
+Host applesauce trying to send datagram (with next hop = 10.0.0.1): IPv4, len=30, protocol=6, ttl=1, src=10.0.0.2, dst=1.2.3.4 payload="random payload: {2685581817}"
+Transferring frame from applesauce to router.eth0: dst=02:00:00:44:6c:8e, src=d2:87:12:ab:a1:39, type=IPv4 IPv4, len=30, protocol=6, ttl=1, src=10.0.0.2, dst=1.2.3.4 payload="random payload: {2685581817}"
+Host applesauce trying to send datagram (with next hop = 10.0.0.1): IPv4, len=30, protocol=6, ttl=0, src=10.0.0.2, dst=1.2.3.4 payload="random payload: {3144906712}"
+Transferring frame from applesauce to router.eth0: dst=02:00:00:44:6c:8e, src=d2:87:12:ab:a1:39, type=IPv4 IPv4, len=30, protocol=6, ttl=0, src=10.0.0.2, dst=1.2.3.4 payload="random payload: {3144906712}"
+
+
+[32;1mCongratulations! All datagrams were routed successfully.[m
 <end of output>
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"arp_network_interface" end time: May 17 16:02 CST
-"arp_network_interface" time elapsed: 00:00:00
+"router_test" end time: May 23 23:13 CST
+"router_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: May 17 16:02 CST
+End testing: May 23 23:13 CST

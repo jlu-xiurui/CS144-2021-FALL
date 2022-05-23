@@ -23,6 +23,7 @@
 /home/xiurui/sponge/bulid/apps/CMakeFiles/rebuild_cache.dir
 /home/xiurui/sponge/bulid/apps/CMakeFiles/tcp_ip_ethernet.dir
 /home/xiurui/sponge/bulid/apps/CMakeFiles/tcp_udp.dir
+/home/xiurui/sponge/bulid/apps/CMakeFiles/network_simulator.dir
 /home/xiurui/sponge/bulid/apps/CMakeFiles/tcp_ipv4.dir
 /home/xiurui/sponge/bulid/apps/CMakeFiles/tcp_native.dir
 /home/xiurui/sponge/bulid/apps/CMakeFiles/tun.dir

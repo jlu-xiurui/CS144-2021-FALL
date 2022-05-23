@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sponge.dir/byte_stream.cc.o"
   "CMakeFiles/sponge.dir/network_interface.cc.o"
+  "CMakeFiles/sponge.dir/router.cc.o"
   "CMakeFiles/sponge.dir/stream_reassembler.cc.o"
   "CMakeFiles/sponge.dir/tcp_connection.cc.o"
   "CMakeFiles/sponge.dir/tcp_helpers/arp_message.cc.o"
