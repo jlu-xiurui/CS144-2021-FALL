@@ -30,3 +30,7 @@ CS144 2021 FALL的实验源码及笔记，实验的官网为[cs144](https://cs14
 ### 6. Lab5: down the stack (the network interface)  [Lab5_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%205.md) 
 
 在本实验中，需要完成介于网络层与数据链路层之间的ARP（地址解析协议），以便数据报可以在以太网等链路层进行传输。
+
+### 7. Lab6: building an IP router  [Lab6_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%206.md) 
+
+在本实验中，需要实现网络层中的IP路由器功能，其实现依赖于上实验中网络接口的实现。
