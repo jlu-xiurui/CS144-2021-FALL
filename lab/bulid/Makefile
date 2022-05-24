@@ -278,108 +278,17 @@ sponge/fast:
 .PHONY : sponge/fast
 
 #=============================================================================
-# Target rules for targets named tcp_benchmark
+# Target rules for targets named stream_copy
 
 # Build rule for target.
-tcp_benchmark: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tcp_benchmark
-.PHONY : tcp_benchmark
+stream_copy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 stream_copy
+.PHONY : stream_copy
 
 # fast build rule for target.
-tcp_benchmark/fast:
-	$(MAKE) -f apps/CMakeFiles/tcp_benchmark.dir/build.make apps/CMakeFiles/tcp_benchmark.dir/build
-.PHONY : tcp_benchmark/fast
-
-#=============================================================================
-# Target rules for targets named webget
-
-# Build rule for target.
-webget: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 webget
-.PHONY : webget
-
-# fast build rule for target.
-webget/fast:
-	$(MAKE) -f apps/CMakeFiles/webget.dir/build.make apps/CMakeFiles/webget.dir/build
-.PHONY : webget/fast
-
-#=============================================================================
-# Target rules for targets named tcp_ip_ethernet
-
-# Build rule for target.
-tcp_ip_ethernet: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tcp_ip_ethernet
-.PHONY : tcp_ip_ethernet
-
-# fast build rule for target.
-tcp_ip_ethernet/fast:
-	$(MAKE) -f apps/CMakeFiles/tcp_ip_ethernet.dir/build.make apps/CMakeFiles/tcp_ip_ethernet.dir/build
-.PHONY : tcp_ip_ethernet/fast
-
-#=============================================================================
-# Target rules for targets named tcp_udp
-
-# Build rule for target.
-tcp_udp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tcp_udp
-.PHONY : tcp_udp
-
-# fast build rule for target.
-tcp_udp/fast:
-	$(MAKE) -f apps/CMakeFiles/tcp_udp.dir/build.make apps/CMakeFiles/tcp_udp.dir/build
-.PHONY : tcp_udp/fast
-
-#=============================================================================
-# Target rules for targets named network_simulator
-
-# Build rule for target.
-network_simulator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 network_simulator
-.PHONY : network_simulator
-
-# fast build rule for target.
-network_simulator/fast:
-	$(MAKE) -f apps/CMakeFiles/network_simulator.dir/build.make apps/CMakeFiles/network_simulator.dir/build
-.PHONY : network_simulator/fast
-
-#=============================================================================
-# Target rules for targets named tcp_ipv4
-
-# Build rule for target.
-tcp_ipv4: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tcp_ipv4
-.PHONY : tcp_ipv4
-
-# fast build rule for target.
-tcp_ipv4/fast:
-	$(MAKE) -f apps/CMakeFiles/tcp_ipv4.dir/build.make apps/CMakeFiles/tcp_ipv4.dir/build
-.PHONY : tcp_ipv4/fast
-
-#=============================================================================
-# Target rules for targets named tcp_native
-
-# Build rule for target.
-tcp_native: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tcp_native
-.PHONY : tcp_native
-
-# fast build rule for target.
-tcp_native/fast:
-	$(MAKE) -f apps/CMakeFiles/tcp_native.dir/build.make apps/CMakeFiles/tcp_native.dir/build
-.PHONY : tcp_native/fast
-
-#=============================================================================
-# Target rules for targets named tun
-
-# Build rule for target.
-tun: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tun
-.PHONY : tun
-
-# fast build rule for target.
-tun/fast:
-	$(MAKE) -f apps/CMakeFiles/tun.dir/build.make apps/CMakeFiles/tun.dir/build
-.PHONY : tun/fast
+stream_copy/fast:
+	$(MAKE) -f apps/CMakeFiles/stream_copy.dir/build.make apps/CMakeFiles/stream_copy.dir/build
+.PHONY : stream_copy/fast
 
 #=============================================================================
 # Target rules for targets named udp_tcpdump
@@ -395,17 +304,134 @@ udp_tcpdump/fast:
 .PHONY : udp_tcpdump/fast
 
 #=============================================================================
-# Target rules for targets named stream_copy
+# Target rules for targets named tun
 
 # Build rule for target.
-stream_copy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 stream_copy
-.PHONY : stream_copy
+tun: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tun
+.PHONY : tun
 
 # fast build rule for target.
-stream_copy/fast:
-	$(MAKE) -f apps/CMakeFiles/stream_copy.dir/build.make apps/CMakeFiles/stream_copy.dir/build
-.PHONY : stream_copy/fast
+tun/fast:
+	$(MAKE) -f apps/CMakeFiles/tun.dir/build.make apps/CMakeFiles/tun.dir/build
+.PHONY : tun/fast
+
+#=============================================================================
+# Target rules for targets named tcp_native
+
+# Build rule for target.
+tcp_native: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tcp_native
+.PHONY : tcp_native
+
+# fast build rule for target.
+tcp_native/fast:
+	$(MAKE) -f apps/CMakeFiles/tcp_native.dir/build.make apps/CMakeFiles/tcp_native.dir/build
+.PHONY : tcp_native/fast
+
+#=============================================================================
+# Target rules for targets named tcp_ipv4
+
+# Build rule for target.
+tcp_ipv4: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tcp_ipv4
+.PHONY : tcp_ipv4
+
+# fast build rule for target.
+tcp_ipv4/fast:
+	$(MAKE) -f apps/CMakeFiles/tcp_ipv4.dir/build.make apps/CMakeFiles/tcp_ipv4.dir/build
+.PHONY : tcp_ipv4/fast
+
+#=============================================================================
+# Target rules for targets named network_simulator
+
+# Build rule for target.
+network_simulator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 network_simulator
+.PHONY : network_simulator
+
+# fast build rule for target.
+network_simulator/fast:
+	$(MAKE) -f apps/CMakeFiles/network_simulator.dir/build.make apps/CMakeFiles/network_simulator.dir/build
+.PHONY : network_simulator/fast
+
+#=============================================================================
+# Target rules for targets named tcp_udp
+
+# Build rule for target.
+tcp_udp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tcp_udp
+.PHONY : tcp_udp
+
+# fast build rule for target.
+tcp_udp/fast:
+	$(MAKE) -f apps/CMakeFiles/tcp_udp.dir/build.make apps/CMakeFiles/tcp_udp.dir/build
+.PHONY : tcp_udp/fast
+
+#=============================================================================
+# Target rules for targets named tcp_ip_ethernet
+
+# Build rule for target.
+tcp_ip_ethernet: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tcp_ip_ethernet
+.PHONY : tcp_ip_ethernet
+
+# fast build rule for target.
+tcp_ip_ethernet/fast:
+	$(MAKE) -f apps/CMakeFiles/tcp_ip_ethernet.dir/build.make apps/CMakeFiles/tcp_ip_ethernet.dir/build
+.PHONY : tcp_ip_ethernet/fast
+
+#=============================================================================
+# Target rules for targets named webget
+
+# Build rule for target.
+webget: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 webget
+.PHONY : webget
+
+# fast build rule for target.
+webget/fast:
+	$(MAKE) -f apps/CMakeFiles/webget.dir/build.make apps/CMakeFiles/webget.dir/build
+.PHONY : webget/fast
+
+#=============================================================================
+# Target rules for targets named lab7
+
+# Build rule for target.
+lab7: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab7
+.PHONY : lab7
+
+# fast build rule for target.
+lab7/fast:
+	$(MAKE) -f apps/CMakeFiles/lab7.dir/build.make apps/CMakeFiles/lab7.dir/build
+.PHONY : lab7/fast
+
+#=============================================================================
+# Target rules for targets named tcp_benchmark
+
+# Build rule for target.
+tcp_benchmark: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tcp_benchmark
+.PHONY : tcp_benchmark
+
+# fast build rule for target.
+tcp_benchmark/fast:
+	$(MAKE) -f apps/CMakeFiles/tcp_benchmark.dir/build.make apps/CMakeFiles/tcp_benchmark.dir/build
+.PHONY : tcp_benchmark/fast
+
+#=============================================================================
+# Target rules for targets named bouncer
+
+# Build rule for target.
+bouncer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bouncer
+.PHONY : bouncer
+
+# fast build rule for target.
+bouncer/fast:
+	$(MAKE) -f apps/CMakeFiles/bouncer.dir/build.make apps/CMakeFiles/bouncer.dir/build
+.PHONY : bouncer/fast
 
 #=============================================================================
 # Target rules for targets named net_interface
@@ -1065,16 +1091,18 @@ help:
 	@echo "... check_lab6"
 	@echo "... check"
 	@echo "... sponge"
-	@echo "... tcp_benchmark"
-	@echo "... webget"
-	@echo "... tcp_ip_ethernet"
-	@echo "... tcp_udp"
-	@echo "... network_simulator"
-	@echo "... tcp_ipv4"
-	@echo "... tcp_native"
-	@echo "... tun"
-	@echo "... udp_tcpdump"
 	@echo "... stream_copy"
+	@echo "... udp_tcpdump"
+	@echo "... tun"
+	@echo "... tcp_native"
+	@echo "... tcp_ipv4"
+	@echo "... network_simulator"
+	@echo "... tcp_udp"
+	@echo "... tcp_ip_ethernet"
+	@echo "... webget"
+	@echo "... lab7"
+	@echo "... tcp_benchmark"
+	@echo "... bouncer"
 	@echo "... net_interface"
 	@echo "... send_close"
 	@echo "... send_ack"

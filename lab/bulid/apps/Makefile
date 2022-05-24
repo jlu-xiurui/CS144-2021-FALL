@@ -56,6 +56,17 @@ CMAKE_BINARY_DIR = /home/xiurui/sponge/bulid
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,17 +88,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,124 +122,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-apps/CMakeFiles/tcp_benchmark.dir/rule:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_benchmark.dir/rule
-.PHONY : apps/CMakeFiles/tcp_benchmark.dir/rule
+apps/CMakeFiles/stream_copy.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/stream_copy.dir/rule
+.PHONY : apps/CMakeFiles/stream_copy.dir/rule
 
 # Convenience name for target.
-tcp_benchmark: apps/CMakeFiles/tcp_benchmark.dir/rule
+stream_copy: apps/CMakeFiles/stream_copy.dir/rule
 
-.PHONY : tcp_benchmark
+.PHONY : stream_copy
 
 # fast build rule for target.
-tcp_benchmark/fast:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_benchmark.dir/build.make apps/CMakeFiles/tcp_benchmark.dir/build
-.PHONY : tcp_benchmark/fast
-
-# Convenience name for target.
-apps/CMakeFiles/webget.dir/rule:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/webget.dir/rule
-.PHONY : apps/CMakeFiles/webget.dir/rule
-
-# Convenience name for target.
-webget: apps/CMakeFiles/webget.dir/rule
-
-.PHONY : webget
-
-# fast build rule for target.
-webget/fast:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/webget.dir/build.make apps/CMakeFiles/webget.dir/build
-.PHONY : webget/fast
-
-# Convenience name for target.
-apps/CMakeFiles/tcp_ip_ethernet.dir/rule:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_ip_ethernet.dir/rule
-.PHONY : apps/CMakeFiles/tcp_ip_ethernet.dir/rule
-
-# Convenience name for target.
-tcp_ip_ethernet: apps/CMakeFiles/tcp_ip_ethernet.dir/rule
-
-.PHONY : tcp_ip_ethernet
-
-# fast build rule for target.
-tcp_ip_ethernet/fast:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_ip_ethernet.dir/build.make apps/CMakeFiles/tcp_ip_ethernet.dir/build
-.PHONY : tcp_ip_ethernet/fast
-
-# Convenience name for target.
-apps/CMakeFiles/tcp_udp.dir/rule:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_udp.dir/rule
-.PHONY : apps/CMakeFiles/tcp_udp.dir/rule
-
-# Convenience name for target.
-tcp_udp: apps/CMakeFiles/tcp_udp.dir/rule
-
-.PHONY : tcp_udp
-
-# fast build rule for target.
-tcp_udp/fast:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_udp.dir/build.make apps/CMakeFiles/tcp_udp.dir/build
-.PHONY : tcp_udp/fast
-
-# Convenience name for target.
-apps/CMakeFiles/network_simulator.dir/rule:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/network_simulator.dir/rule
-.PHONY : apps/CMakeFiles/network_simulator.dir/rule
-
-# Convenience name for target.
-network_simulator: apps/CMakeFiles/network_simulator.dir/rule
-
-.PHONY : network_simulator
-
-# fast build rule for target.
-network_simulator/fast:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/network_simulator.dir/build.make apps/CMakeFiles/network_simulator.dir/build
-.PHONY : network_simulator/fast
-
-# Convenience name for target.
-apps/CMakeFiles/tcp_ipv4.dir/rule:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_ipv4.dir/rule
-.PHONY : apps/CMakeFiles/tcp_ipv4.dir/rule
-
-# Convenience name for target.
-tcp_ipv4: apps/CMakeFiles/tcp_ipv4.dir/rule
-
-.PHONY : tcp_ipv4
-
-# fast build rule for target.
-tcp_ipv4/fast:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_ipv4.dir/build.make apps/CMakeFiles/tcp_ipv4.dir/build
-.PHONY : tcp_ipv4/fast
-
-# Convenience name for target.
-apps/CMakeFiles/tcp_native.dir/rule:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_native.dir/rule
-.PHONY : apps/CMakeFiles/tcp_native.dir/rule
-
-# Convenience name for target.
-tcp_native: apps/CMakeFiles/tcp_native.dir/rule
-
-.PHONY : tcp_native
-
-# fast build rule for target.
-tcp_native/fast:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_native.dir/build.make apps/CMakeFiles/tcp_native.dir/build
-.PHONY : tcp_native/fast
-
-# Convenience name for target.
-apps/CMakeFiles/tun.dir/rule:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tun.dir/rule
-.PHONY : apps/CMakeFiles/tun.dir/rule
-
-# Convenience name for target.
-tun: apps/CMakeFiles/tun.dir/rule
-
-.PHONY : tun
-
-# fast build rule for target.
-tun/fast:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tun.dir/build.make apps/CMakeFiles/tun.dir/build
-.PHONY : tun/fast
+stream_copy/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/stream_copy.dir/build.make apps/CMakeFiles/stream_copy.dir/build
+.PHONY : stream_copy/fast
 
 # Convenience name for target.
 apps/CMakeFiles/udp_tcpdump.dir/rule:
@@ -257,19 +152,154 @@ udp_tcpdump/fast:
 .PHONY : udp_tcpdump/fast
 
 # Convenience name for target.
-apps/CMakeFiles/stream_copy.dir/rule:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/stream_copy.dir/rule
-.PHONY : apps/CMakeFiles/stream_copy.dir/rule
+apps/CMakeFiles/tun.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tun.dir/rule
+.PHONY : apps/CMakeFiles/tun.dir/rule
 
 # Convenience name for target.
-stream_copy: apps/CMakeFiles/stream_copy.dir/rule
+tun: apps/CMakeFiles/tun.dir/rule
 
-.PHONY : stream_copy
+.PHONY : tun
 
 # fast build rule for target.
-stream_copy/fast:
-	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/stream_copy.dir/build.make apps/CMakeFiles/stream_copy.dir/build
-.PHONY : stream_copy/fast
+tun/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tun.dir/build.make apps/CMakeFiles/tun.dir/build
+.PHONY : tun/fast
+
+# Convenience name for target.
+apps/CMakeFiles/tcp_native.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_native.dir/rule
+.PHONY : apps/CMakeFiles/tcp_native.dir/rule
+
+# Convenience name for target.
+tcp_native: apps/CMakeFiles/tcp_native.dir/rule
+
+.PHONY : tcp_native
+
+# fast build rule for target.
+tcp_native/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_native.dir/build.make apps/CMakeFiles/tcp_native.dir/build
+.PHONY : tcp_native/fast
+
+# Convenience name for target.
+apps/CMakeFiles/tcp_ipv4.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_ipv4.dir/rule
+.PHONY : apps/CMakeFiles/tcp_ipv4.dir/rule
+
+# Convenience name for target.
+tcp_ipv4: apps/CMakeFiles/tcp_ipv4.dir/rule
+
+.PHONY : tcp_ipv4
+
+# fast build rule for target.
+tcp_ipv4/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_ipv4.dir/build.make apps/CMakeFiles/tcp_ipv4.dir/build
+.PHONY : tcp_ipv4/fast
+
+# Convenience name for target.
+apps/CMakeFiles/network_simulator.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/network_simulator.dir/rule
+.PHONY : apps/CMakeFiles/network_simulator.dir/rule
+
+# Convenience name for target.
+network_simulator: apps/CMakeFiles/network_simulator.dir/rule
+
+.PHONY : network_simulator
+
+# fast build rule for target.
+network_simulator/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/network_simulator.dir/build.make apps/CMakeFiles/network_simulator.dir/build
+.PHONY : network_simulator/fast
+
+# Convenience name for target.
+apps/CMakeFiles/tcp_udp.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_udp.dir/rule
+.PHONY : apps/CMakeFiles/tcp_udp.dir/rule
+
+# Convenience name for target.
+tcp_udp: apps/CMakeFiles/tcp_udp.dir/rule
+
+.PHONY : tcp_udp
+
+# fast build rule for target.
+tcp_udp/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_udp.dir/build.make apps/CMakeFiles/tcp_udp.dir/build
+.PHONY : tcp_udp/fast
+
+# Convenience name for target.
+apps/CMakeFiles/tcp_ip_ethernet.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_ip_ethernet.dir/rule
+.PHONY : apps/CMakeFiles/tcp_ip_ethernet.dir/rule
+
+# Convenience name for target.
+tcp_ip_ethernet: apps/CMakeFiles/tcp_ip_ethernet.dir/rule
+
+.PHONY : tcp_ip_ethernet
+
+# fast build rule for target.
+tcp_ip_ethernet/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_ip_ethernet.dir/build.make apps/CMakeFiles/tcp_ip_ethernet.dir/build
+.PHONY : tcp_ip_ethernet/fast
+
+# Convenience name for target.
+apps/CMakeFiles/webget.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/webget.dir/rule
+.PHONY : apps/CMakeFiles/webget.dir/rule
+
+# Convenience name for target.
+webget: apps/CMakeFiles/webget.dir/rule
+
+.PHONY : webget
+
+# fast build rule for target.
+webget/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/webget.dir/build.make apps/CMakeFiles/webget.dir/build
+.PHONY : webget/fast
+
+# Convenience name for target.
+apps/CMakeFiles/lab7.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/lab7.dir/rule
+.PHONY : apps/CMakeFiles/lab7.dir/rule
+
+# Convenience name for target.
+lab7: apps/CMakeFiles/lab7.dir/rule
+
+.PHONY : lab7
+
+# fast build rule for target.
+lab7/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/lab7.dir/build.make apps/CMakeFiles/lab7.dir/build
+.PHONY : lab7/fast
+
+# Convenience name for target.
+apps/CMakeFiles/tcp_benchmark.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/tcp_benchmark.dir/rule
+.PHONY : apps/CMakeFiles/tcp_benchmark.dir/rule
+
+# Convenience name for target.
+tcp_benchmark: apps/CMakeFiles/tcp_benchmark.dir/rule
+
+.PHONY : tcp_benchmark
+
+# fast build rule for target.
+tcp_benchmark/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/tcp_benchmark.dir/build.make apps/CMakeFiles/tcp_benchmark.dir/build
+.PHONY : tcp_benchmark/fast
+
+# Convenience name for target.
+apps/CMakeFiles/bouncer.dir/rule:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f CMakeFiles/Makefile2 apps/CMakeFiles/bouncer.dir/rule
+.PHONY : apps/CMakeFiles/bouncer.dir/rule
+
+# Convenience name for target.
+bouncer: apps/CMakeFiles/bouncer.dir/rule
+
+.PHONY : bouncer
+
+# fast build rule for target.
+bouncer/fast:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/bouncer.dir/build.make apps/CMakeFiles/bouncer.dir/build
+.PHONY : bouncer/fast
 
 bidirectional_stream_copy.o: bidirectional_stream_copy.cc.o
 
@@ -297,6 +327,60 @@ bidirectional_stream_copy.s: bidirectional_stream_copy.cc.s
 bidirectional_stream_copy.cc.s:
 	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/stream_copy.dir/build.make apps/CMakeFiles/stream_copy.dir/bidirectional_stream_copy.cc.s
 .PHONY : bidirectional_stream_copy.cc.s
+
+bouncer.o: bouncer.cc.o
+
+.PHONY : bouncer.o
+
+# target to build an object file
+bouncer.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/bouncer.dir/build.make apps/CMakeFiles/bouncer.dir/bouncer.cc.o
+.PHONY : bouncer.cc.o
+
+bouncer.i: bouncer.cc.i
+
+.PHONY : bouncer.i
+
+# target to preprocess a source file
+bouncer.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/bouncer.dir/build.make apps/CMakeFiles/bouncer.dir/bouncer.cc.i
+.PHONY : bouncer.cc.i
+
+bouncer.s: bouncer.cc.s
+
+.PHONY : bouncer.s
+
+# target to generate assembly for a file
+bouncer.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/bouncer.dir/build.make apps/CMakeFiles/bouncer.dir/bouncer.cc.s
+.PHONY : bouncer.cc.s
+
+lab7.o: lab7.cc.o
+
+.PHONY : lab7.o
+
+# target to build an object file
+lab7.cc.o:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/lab7.dir/build.make apps/CMakeFiles/lab7.dir/lab7.cc.o
+.PHONY : lab7.cc.o
+
+lab7.i: lab7.cc.i
+
+.PHONY : lab7.i
+
+# target to preprocess a source file
+lab7.cc.i:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/lab7.dir/build.make apps/CMakeFiles/lab7.dir/lab7.cc.i
+.PHONY : lab7.cc.i
+
+lab7.s: lab7.cc.s
+
+.PHONY : lab7.s
+
+# target to generate assembly for a file
+lab7.cc.s:
+	cd /home/xiurui/sponge/bulid && $(MAKE) -f apps/CMakeFiles/lab7.dir/build.make apps/CMakeFiles/lab7.dir/lab7.cc.s
+.PHONY : lab7.cc.s
 
 network_simulator.o: network_simulator.cc.o
 
@@ -547,22 +631,30 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... tcp_benchmark"
-	@echo "... webget"
 	@echo "... rebuild_cache"
-	@echo "... tcp_ip_ethernet"
-	@echo "... tcp_udp"
-	@echo "... network_simulator"
-	@echo "... tcp_ipv4"
-	@echo "... tcp_native"
-	@echo "... tun"
-	@echo "... udp_tcpdump"
+	@echo "... edit_cache"
 	@echo "... stream_copy"
+	@echo "... udp_tcpdump"
+	@echo "... tun"
+	@echo "... tcp_native"
+	@echo "... tcp_ipv4"
+	@echo "... network_simulator"
+	@echo "... tcp_udp"
+	@echo "... tcp_ip_ethernet"
+	@echo "... webget"
+	@echo "... lab7"
+	@echo "... tcp_benchmark"
+	@echo "... bouncer"
+	@echo "... test"
 	@echo "... bidirectional_stream_copy.o"
 	@echo "... bidirectional_stream_copy.i"
 	@echo "... bidirectional_stream_copy.s"
+	@echo "... bouncer.o"
+	@echo "... bouncer.i"
+	@echo "... bouncer.s"
+	@echo "... lab7.o"
+	@echo "... lab7.i"
+	@echo "... lab7.s"
 	@echo "... network_simulator.o"
 	@echo "... network_simulator.i"
 	@echo "... network_simulator.s"
