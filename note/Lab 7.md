@@ -6,7 +6,7 @@
 
 实验指导书中要求与其余同学的网络协议栈相互通讯，由于本人为自学者，因此只能在本机上检验网络协议栈是否工作正常：
 
-![lab7_figure1](C:\Users\xiurui\Desktop\计算机书单\CS144\lab7_figure1.png)
+![lab7_figure1](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/figure/lab7_figure1.png)
 
 可见网络协议栈工作正常，运行总体测试用例 `make check` 结果如下：
 
