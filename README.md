@@ -1,5 +1,7 @@
 # CS144-2021-FALL
-CS144 2021 FALL的实验源码及笔记，实验的官网为[cs144](https://cs144.github.io/)，有关实验的实验指导书和实验代码均可从该网站下载。实验的笔记位于note目录，实验源码位于lab目录。
+CS144 2021 FALL的实验源码及笔记，实验的官网为[cs144](https://cs144.github.io/)，有关实验的实验指导书和实验代码均可从该网站下载。实验的笔记位于note目录，实验源码位于lab目录。已完结^……^。
+
+总体而言，本实验的难度并不大（相较于6.828和15213），可以在100小时以内完成，但实验的内容设计的十分巧妙，尤其是前5个实验，让人可以在实践中自我体会TCP架构的设计思路（虽然有一些特性未被实现，如慢启动等，但也无伤大雅），这一点收获是无法从阅读任何书籍的过程中得到的。
 
 ### 1. Lab0: networking warmup  [Lab0_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%200.md) 
 
@@ -34,3 +36,7 @@ CS144 2021 FALL的实验源码及笔记，实验的官网为[cs144](https://cs14
 ### 7. Lab6: building an IP router  [Lab6_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%206.md) 
 
 在本实验中，需要实现网络层中的IP路由器功能，其实现依赖于上实验中网络接口的实现。
+
+### 8. Lab7: putting it all togethe  [Lab7_note](https://github.com/jlu-xiurui/CS144-2021-FALL/blob/main/note/Lab%207.md) 
+
+本实验的内容即为将之前所有实验的内容组装起来，检查其是否可以作为一个正常的网络协议栈在互联网中通讯。
